@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion 16: Sinus- och Cosinusfunktioner - Trigonometri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <div class="settings-panel">
+    <button class="settings-btn theme-toggle" onclick="toggleTheme()" title="Byt tema">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+    <button class="settings-btn focus-toggle" onclick="toggleFocus()" title="Enhanced Focus">
+      <span class="icon-focus">🎯</span>
+      <span class="icon-focus-off">✨</span>
+    </button>
+  </div>
+
+  <a href="../index.html" class="back-link">← Tillbaka till översikt</a>
+  
+  <main class="lesson-page">
+    <article class="lesson">
+      <header class="lesson-header">
+        <span class="lesson-badge">Lektion 16</span>
+        <h1 class="lesson-title">Sinus- och Cosinusfunktioner</h1>
+      </header>
+      
+      <div class="learning-goals">
+        <h3>📚 Lärandemål</h3>
+        <ul>
+          <li>Skissa graferna för $y = \sin x$ och $y = \cos x$</li>
+          <li>Förstå begreppen amplitud, period och medelvärde</li>
+          <li>Analysera funktioner av typen $y = A\sin(Bx) + C$</li>
+        </ul>
+      </div>
+      
+      <section class="section">
+        <h2 class="section-title">Grundläggande Egenskaper</h2>
+        
+        <div class="table-container">
+          <table>
+            <tr><th>Egenskap</th><th>$y = \sin x$</th><th>$y = \cos x$</th></tr>
+            <tr><td>Period</td><td>$360°$ (eller $2\pi$)</td><td>$360°$ (eller $2\pi$)</td></tr>
+            <tr><td>Amplitud</td><td>$1$</td><td>$1$</td></tr>
+            <tr><td>Medelvärde</td><td>$0$</td><td>$0$</td></tr>
+            <tr><td>Maxvärde</td><td>$1$</td><td>$1$</td></tr>
+            <tr><td>Minvärde</td><td>$-1$</td><td>$-1$</td></tr>
+          </table>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Interaktiv Graf</h2>
+        <p>Experimentera med reglagen för att se hur parametrarna A, B och C påverkar grafen:</p>
+        
+        <div class="graph-container">
+          <div id="sinCosGraph" class="desmos-graph"></div>
+          <div class="graph-caption">$y = A \cdot \sin(B \cdot x) + C$ — Dra i reglagen för A, B, C</div>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Transformationer</h2>
+        
+        <div class="formula-box">
+          <div class="formula-label">Generell form</div>
+          $$y = A\sin(Bx + \varphi) + C$$
+        </div>
+        
+        <div class="table-container">
+          <table>
+            <tr><th>Parameter</th><th>Påverkan</th></tr>
+            <tr><td>$A$</td><td>Amplitud = $|A|$</td></tr>
+            <tr><td>$B$</td><td>Period = $\frac{360°}{|B|}$ (eller $\frac{2\pi}{|B|}$)</td></tr>
+            <tr><td>$C$</td><td>Vertikal förskjutning (medelvärde)</td></tr>
+            <tr><td>$\varphi$</td><td>Fasförskjutning (horisontell)</td></tr>
+          </table>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Genomgångna Exempel</h2>
+        
+        <div class="example">
+          <div class="example-header">Exempel</div>
+          <div class="example-content">
+            <div class="example-problem">Bestäm amplitud, period och medelvärde för $y = 3\sin(2x) + 1$.</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$A = 3 \Rightarrow \text{Amplitud} = 3$$
+$$B = 2 \Rightarrow \text{Period} = \frac{360°}{2} = 180°$$
+$$C = 1 \Rightarrow \text{Medelvärde} = 1$$
+$$\text{Maxvärde} = 1 + 3 = 4, \quad \text{Minvärde} = 1 - 3 = -2$$
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="exercises">
+        <h2 class="exercises-title">📝 Övningar</h2>
+        
+        <div class="exercise-level">
+          <span class="level-badge">Nivå E - Grundläggande</span>
+          <ol class="exercise-list">
+            <li data-num="1">Bestäm amplitud och period för $y = 2\sin x$</li>
+            <li data-num="2">Bestäm amplitud och period för $y = \cos(3x)$</li>
+            <li data-num="3">Bestäm medelvärde för $y = \sin x + 5$</li>
+            <li data-num="4">Bestäm max- och minvärde för $y = 4\cos x$</li>
+            <li data-num="5">Vilken period har $y = \sin(0{,}5x)$?</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge advanced">Nivå C - Tillämpning</span>
+          <ol class="exercise-list">
+            <li data-num="6">Bestäm amplitud, period och medelvärde för $y = 5\sin(4x) - 2$</li>
+            <li data-num="7">Skriv upp en sinusfunktion med amplitud 3, period 180° och medelvärde 0.</li>
+            <li data-num="8">En sinusfunktion har maxvärde 7 och minvärde 1. Bestäm amplitud och medelvärde.</li>
+            <li data-num="9">Bestäm alla $x \in [0°, 360°]$ där $y = \sin x$ har värdet $\frac{1}{2}$.</li>
+            <li data-num="10">Lös $2\sin x - 1 = 0$ för $x \in [0°, 360°]$.</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge expert">Nivå A - Avancerat</span>
+          <ol class="exercise-list">
+            <li data-num="11">En funktion $y = A\sin(Bx) + C$ har max 10, min 2 och period 90°. Bestäm A, B och C.</li>
+            <li data-num="12">Temperaturen under ett dygn kan modelleras med $T(t) = 8\sin(15t - 90°) + 15$. Bestäm max- och mintemperatur samt vilken tid det är varmast.</li>
+            <li data-num="13">För vilka värden på $k$ har $y = k\sin x + 2$ endast positiva värden?</li>
+            <li data-num="14">Visa att $\sin x$ och $\cos x$ har samma period.</li>
+            <li data-num="15">Vattenstånd i en hamn modelleras av $h(t) = 1{,}5\cos(30t) + 3$ där $h$ är i meter och $t$ i timmar. Hur lång tid mellan högvatten?</li>
+            <li data-num="16">Skriv en ekvation för en cosinusfunktion som går genom punkterna $(0, 5)$ och $(90°, 1)$.</li>
+            <li data-num="17">Bestäm antalet lösningar till $\sin(2x) = 0{,}5$ för $x \in [0°, 720°]$.</li>
+          </ol>
+        </div>
+        
+        <div class="facit">
+          <button class="facit-toggle" onclick="this.nextElementSibling.classList.toggle('visible'); this.textContent = this.nextElementSibling.classList.contains('visible') ? '👁 Dölj facit' : '👁 Visa facit'">👁 Visa facit</button>
+          <div class="facit-content">
+            <div class="facit-item"><strong>1.</strong> Amplitud = 2, Period = 360°</div>
+            <div class="facit-item"><strong>2.</strong> Amplitud = 1, Period = 120°</div>
+            <div class="facit-item"><strong>3.</strong> Medelvärde = 5</div>
+            <div class="facit-item"><strong>4.</strong> Max = 4, Min = -4</div>
+            <div class="facit-item"><strong>5.</strong> Period = 720°</div>
+            <div class="facit-item"><strong>6.</strong> Amplitud = 5, Period = 90°, Medelvärde = -2</div>
+            <div class="facit-item"><strong>7.</strong> $y = 3\sin(2x)$</div>
+            <div class="facit-item"><strong>8.</strong> Amplitud = 3, Medelvärde = 4</div>
+            <div class="facit-item"><strong>9.</strong> $x = 30°$ eller $x = 150°$</div>
+            <div class="facit-item"><strong>10.</strong> $\sin x = 0{,}5 \Rightarrow x = 30°, 150°$</div>
+            <div class="facit-item"><strong>11.</strong> $A = 4$, $C = 6$, $B = 4$. Dvs $y = 4\sin(4x) + 6$</div>
+            <div class="facit-item"><strong>12.</strong> Max = 23°C, Min = 7°C, varmast vid $t = 6$ (kl 6:00)</div>
+            <div class="facit-item"><strong>13.</strong> $-2 < k < 2$</div>
+            <div class="facit-item"><strong>14.</strong> Båda funktionerna upprepar sig efter 360° ✓</div>
+            <div class="facit-item"><strong>15.</strong> Period = 12 timmar, alltså 12 timmar mellan högvatten</div>
+            <div class="facit-item"><strong>16.</strong> $y = 2\cos(x) + 3$</div>
+            <div class="facit-item"><strong>17.</strong> 8 lösningar</div>
+          </div>
+        </div>
+      </section>
+      
+      <nav class="lesson-nav">
+        <a href="15-ekvationer-formler.html" class="nav-btn">← Föregående</a>
+        <a href="17-digitala-verktyg.html" class="nav-btn">Nästa →</a>
+      </nav>
+    </article>
+  </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      renderMathInElement(document.body, {
+        delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}],
+        throwOnError: false
+      });
+      
+      // Desmos sin/cos function graph
+      var elt = document.getElementById('sinCosGraph');
+      if (elt) {
+        var calc = Desmos.GraphingCalculator(elt, {
+          expressions: true,
+          settingsMenu: false,
+          zoomButtons: true,
+          expressionsCollapsed: true,
+          degreeMode: true
+        });
+        
+        calc.setMathBounds({left: -30, right: 390, bottom: -5, top: 5});
+        
+        // Parameters with sliders
+        calc.setExpression({id: 'a', latex: 'A=2', sliderBounds: {min: 0.5, max: 4, step: 0.1}});
+        calc.setExpression({id: 'b', latex: 'B=1', sliderBounds: {min: 0.5, max: 4, step: 0.1}});
+        calc.setExpression({id: 'c', latex: 'C=0', sliderBounds: {min: -3, max: 3, step: 0.1}});
+        
+        // Main function
+        calc.setExpression({id: 'func', latex: 'y=A\\sin(B\\cdot x)+C', color: '#7B5EBD', lineWidth: 3});
+        
+        // Reference sin x
+        calc.setExpression({id: 'ref', latex: 'y=\\sin(x)', color: '#888888', lineWidth: 1, lineStyle: Desmos.Styles.DASHED});
+        
+        // Horizontal lines for max/min
+        calc.setExpression({id: 'max', latex: 'y=C+A', color: '#00BFA5', lineWidth: 1, lineStyle: Desmos.Styles.DASHED});
+        calc.setExpression({id: 'min', latex: 'y=C-A', color: '#FF7B54', lineWidth: 1, lineStyle: Desmos.Styles.DASHED});
+        calc.setExpression({id: 'mid', latex: 'y=C', color: '#FFC107', lineWidth: 1, lineStyle: Desmos.Styles.DASHED});
+      }
+    });
+    
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    }
+    function toggleFocus() {
+      document.body.classList.toggle('focus-mode');
+      localStorage.setItem('focusMode', document.body.classList.contains('focus-mode') ? 'on' : 'off');
+    }
+    if (localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+    if (localStorage.getItem('focusMode') === 'on') document.body.classList.add('focus-mode');
+    function toggleFont() {
+      document.body.classList.toggle('dyslexia-font');
+      localStorage.setItem('dyslexiaFont', document.body.classList.contains('dyslexia-font') ? 'on' : 'off');
+    }
+    if (localStorage.getItem('dyslexiaFont') === 'on') document.body.classList.add('dyslexia-font');
+    window.addEventListener('scroll', function() {
+      if (document.body.classList.contains('focus-mode')) {
+        const scrolled = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+      }
+    });
+  </script>
+</body>
+</html>

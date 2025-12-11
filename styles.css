@@ -1,0 +1,1028 @@
+/* ========================================
+   TRIGONOMETRI LEKTIONER - MATERIAL 3 EXPRESSIVE
+   Enhanced Focus Mode + Accessibility
+   ======================================== */
+
+/* OpenDyslexic Font Import */
+@import url('https://fonts.cdnfonts.com/css/opendyslexic');
+
+/* ========================================
+   CSS CUSTOM PROPERTIES - MATERIAL 3 TOKENS
+   ======================================== */
+
+:root {
+  /* Primary Palette - Purple/Violet */
+  --md-primary: #7B5EBD;
+  --md-on-primary: #FFFFFF;
+  --md-primary-container: #EADDFF;
+  --md-on-primary-container: #21005D;
+  
+  /* Secondary Palette - Teal */
+  --md-secondary: #00BFA5;
+  --md-on-secondary: #FFFFFF;
+  --md-secondary-container: #A7F3E9;
+  --md-on-secondary-container: #00382F;
+  
+  /* Tertiary Palette - Coral */
+  --md-tertiary: #FF7B54;
+  --md-on-tertiary: #FFFFFF;
+  --md-tertiary-container: #FFDAD1;
+  --md-on-tertiary-container: #3B0900;
+  
+  /* Surface colors - Dark Mode (default) */
+  --md-surface: #141218;
+  --md-surface-dim: #0E0D11;
+  --md-surface-bright: #1F1D23;
+  --md-surface-container-lowest: #0E0D11;
+  --md-surface-container-low: #1A1820;
+  --md-surface-container: #1E1C24;
+  --md-surface-container-high: #28262F;
+  --md-surface-container-highest: #33303A;
+  
+  --md-on-surface: #E6E0EC;
+  --md-on-surface-variant: #C9C4D0;
+  --md-outline: #948F9A;
+  --md-outline-variant: #49454F;
+  
+  /* Success/Warning/Error */
+  --md-success: #4CAF50;
+  --md-warning: #FFC107;
+  --md-error: #F44336;
+  
+  /* Typography */
+  --font-main: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+  --font-display: "Inter", sans-serif;
+  
+  /* Font Sizes - Material 3 Type Scale */
+  --text-display-lg: 3.5rem;
+  --text-display-md: 2.75rem;
+  --text-headline-lg: 2rem;
+  --text-headline-md: 1.5rem;
+  --text-title-lg: 1.375rem;
+  --text-title-md: 1rem;
+  --text-body-lg: 1rem;
+  --text-body-md: 0.875rem;
+  --text-label-lg: 0.875rem;
+  
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  
+  /* Shapes - Material 3 */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  
+  /* Shadows - Elevation */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3), 0 1px 3px 1px rgba(0,0,0,0.15);
+  --shadow-md: 0 1px 2px rgba(0,0,0,0.3), 0 2px 6px 2px rgba(0,0,0,0.15);
+  --shadow-lg: 0 4px 8px 3px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-xl: 0 6px 10px 4px rgba(0,0,0,0.15), 0 2px 3px rgba(0,0,0,0.3);
+  
+  /* Motion - Spring-based (Material 3 Expressive) */
+  --motion-standard: 300ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-expressive: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  --motion-spring: 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --motion-fast: 150ms cubic-bezier(0.2, 0, 0, 1);
+  
+  /* Layout */
+  --content-max-width: 900px;
+  --sidebar-width: 280px;
+}
+
+/* Light Mode */
+body.light-mode {
+  --md-surface: #FEF7FF;
+  --md-surface-dim: #DED8E1;
+  --md-surface-bright: #FEF7FF;
+  --md-surface-container-lowest: #FFFFFF;
+  --md-surface-container-low: #F8F2FA;
+  --md-surface-container: #F2ECF4;
+  --md-surface-container-high: #ECE6EE;
+  --md-surface-container-highest: #E6E0E8;
+  
+  --md-on-surface: #1D1B20;
+  --md-on-surface-variant: #49454E;
+  --md-outline: #7A757F;
+  --md-outline-variant: #CAC4CE;
+  
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.1), 0 1px 3px 1px rgba(0,0,0,0.05);
+  --shadow-md: 0 1px 2px rgba(0,0,0,0.1), 0 2px 6px 2px rgba(0,0,0,0.05);
+  --shadow-lg: 0 4px 8px 3px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* ========================================
+   ENHANCED FOCUS MODE
+   Accessibility for attention/focus needs
+   ======================================== */
+
+body.focus-mode {
+  /* Higher contrast */
+  --md-on-surface: #FFFFFF;
+  --md-on-surface-variant: #E0E0E0;
+  
+  /* Reduced motion */
+  --motion-standard: 0ms;
+  --motion-expressive: 0ms;
+  --motion-spring: 0ms;
+  --motion-fast: 0ms;
+  
+  /* Larger base sizing */
+  --text-body-lg: 1.125rem;
+  --text-body-md: 1rem;
+  --space-md: 1.25rem;
+  --space-lg: 2rem;
+}
+
+body.focus-mode.light-mode {
+  --md-on-surface: #000000;
+  --md-on-surface-variant: #333333;
+}
+
+/* Dyslexia-friendly font option - works independently */
+body.dyslexia-font {
+  --font-main: "OpenDyslexic", "Comic Sans MS", cursive, sans-serif;
+}
+
+/* ========================================
+   RESET & BASE
+   ======================================== */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.focus-mode {
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--md-surface);
+  color: var(--md-on-surface);
+  line-height: 1.7;
+  font-size: var(--text-body-lg);
+  transition: background var(--motion-standard), color var(--motion-standard);
+}
+
+/* ========================================
+   SETTINGS PANEL
+   ======================================== */
+
+.settings-panel {
+  position: fixed;
+  top: var(--space-md);
+  right: var(--space-md);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.settings-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: var(--md-surface-container-high);
+  color: var(--md-on-surface);
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--motion-spring), background var(--motion-fast);
+}
+
+.settings-btn:hover {
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+  transform: scale(1.1);
+}
+
+.settings-btn:active {
+  transform: scale(0.95);
+}
+
+/* Icon visibility */
+.settings-btn .icon-sun,
+.settings-btn .icon-moon,
+.settings-btn .icon-focus,
+.settings-btn .icon-focus-off,
+.settings-btn .icon-font,
+.settings-btn .icon-font-off {
+  display: none;
+}
+
+body:not(.light-mode) .settings-btn.theme-toggle .icon-moon { display: block; }
+body.light-mode .settings-btn.theme-toggle .icon-sun { display: block; }
+body:not(.focus-mode) .settings-btn.focus-toggle .icon-focus { display: block; }
+body.focus-mode .settings-btn.focus-toggle .icon-focus-off { display: block; }
+body:not(.dyslexia-font) .settings-btn.font-toggle .icon-font { display: block; }
+body.dyslexia-font .settings-btn.font-toggle .icon-font-off { display: block; }
+
+/* ========================================
+   HOMEPAGE STYLES
+   ======================================== */
+
+.homepage {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--md-surface-dim) 0%, var(--md-surface) 100%);
+}
+
+.hero {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+  background: linear-gradient(135deg, var(--md-primary-container) 0%, var(--md-secondary-container) 100%);
+  border-bottom: 1px solid var(--md-outline-variant);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(123, 94, 189, 0.1) 0%, transparent 60%);
+  animation: heroGlow 8s ease-in-out infinite;
+}
+
+body.focus-mode .hero::before {
+  animation: none;
+}
+
+@keyframes heroGlow {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(5%, 5%); }
+}
+
+.hero h1 {
+  font-size: var(--text-display-md);
+  font-weight: 700;
+  color: var(--md-on-primary-container);
+  margin-bottom: var(--space-sm);
+  position: relative;
+  display: inline-block;
+}
+
+.hero .subtitle {
+  font-size: var(--text-title-md);
+  color: var(--md-on-primary-container);
+  opacity: 0.8;
+  position: relative;
+}
+
+.home-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-xl);
+}
+
+/* Course Sections */
+.course-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.course-title {
+  font-size: var(--text-headline-md);
+  font-weight: 600;
+  color: var(--md-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.course-desc {
+  font-size: var(--text-body-md);
+  color: var(--md-on-surface-variant);
+  margin-bottom: var(--space-lg);
+}
+
+/* Lesson Card Grid */
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-md);
+}
+
+.lesson-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-lg) var(--space-md);
+  background: var(--md-surface-container);
+  border: 1px solid var(--md-outline-variant);
+  border-radius: var(--radius-xl);
+  text-decoration: none;
+  transition: transform var(--motion-spring), box-shadow var(--motion-fast), border-color var(--motion-fast);
+}
+
+.lesson-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--md-primary);
+}
+
+body.focus-mode .lesson-card:hover {
+  transform: none;
+  border-width: 3px;
+}
+
+.card-number {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--md-surface-container-highest);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: var(--text-title-md);
+  color: var(--md-primary);
+  margin-bottom: var(--space-sm);
+  transition: background var(--motion-fast), color var(--motion-fast);
+}
+
+.lesson-card:hover .card-number {
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+}
+
+.card-title {
+  font-size: var(--text-label-lg);
+  font-weight: 500;
+  color: var(--md-on-surface);
+  text-align: center;
+}
+
+/* Formula Card */
+.formula-card {
+  background: linear-gradient(135deg, var(--md-primary) 0%, var(--md-secondary) 100%);
+  border-color: transparent;
+}
+
+.formula-card .card-number {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 1.5rem;
+}
+
+.formula-card .card-title {
+  color: white;
+}
+
+/* Footer */
+.home-footer {
+  text-align: center;
+  padding: var(--space-xl);
+  color: var(--md-on-surface-variant);
+  font-size: var(--text-body-md);
+  border-top: 1px solid var(--md-outline-variant);
+}
+
+/* ========================================
+   LESSON PAGE STYLES
+   ======================================== */
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  color: var(--md-on-surface-variant);
+  text-decoration: none;
+  font-size: var(--text-body-md);
+  transition: color var(--motion-fast);
+}
+
+.back-link:hover {
+  color: var(--md-primary);
+}
+
+.lesson-page {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg) var(--space-2xl);
+}
+
+.lesson {
+  display: block;
+  animation: fadeSlideIn 0.4s ease-out;
+}
+
+body.focus-mode .lesson {
+  animation: none;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Lesson Header */
+.lesson-header {
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--md-outline-variant);
+}
+
+.lesson-badge {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-md);
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+  font-size: var(--text-label-lg);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-sm);
+}
+
+.lesson-title {
+  font-size: var(--text-headline-lg);
+  font-weight: 700;
+  color: var(--md-on-surface);
+  background: linear-gradient(135deg, var(--md-on-surface) 0%, var(--md-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.focus-mode .lesson-title {
+  background: none;
+  -webkit-text-fill-color: var(--md-on-surface);
+  color: var(--md-on-surface);
+}
+
+/* Learning Goals */
+.learning-goals {
+  background: var(--md-surface-container);
+  border: 1px solid var(--md-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.learning-goals h3 {
+  font-size: var(--text-title-md);
+  font-weight: 600;
+  color: var(--md-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.learning-goals ul {
+  list-style: none;
+}
+
+.learning-goals li {
+  padding: var(--space-xs) 0;
+  padding-left: var(--space-lg);
+  position: relative;
+  color: var(--md-on-surface-variant);
+}
+
+.learning-goals li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--md-secondary);
+  font-weight: bold;
+}
+
+/* ========================================
+   CONTENT SECTIONS
+   ======================================== */
+
+.section {
+  margin-bottom: var(--space-xl);
+}
+
+.section-title {
+  font-size: var(--text-title-lg);
+  font-weight: 600;
+  color: var(--md-primary);
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.section-title::before {
+  content: "";
+  width: 4px;
+  height: 1.5rem;
+  background: var(--md-primary);
+  border-radius: 2px;
+}
+
+.subsection-title {
+  font-size: var(--text-title-md);
+  font-weight: 600;
+  color: var(--md-on-surface);
+  margin: var(--space-lg) 0 var(--space-sm);
+}
+
+/* ========================================
+   FORMULA BOXES
+   ======================================== */
+
+.formula-box {
+  background: linear-gradient(135deg, var(--md-surface-container-high) 0%, var(--md-surface-container) 100%);
+  border: 2px solid var(--md-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin: var(--space-lg) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.formula-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--md-primary), var(--md-secondary), var(--md-tertiary));
+}
+
+body.focus-mode .formula-box::before {
+  display: none;
+}
+
+.formula-box .katex {
+  font-size: 1.3em;
+}
+
+.formula-label {
+  font-size: var(--text-label-lg);
+  color: var(--md-primary);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ========================================
+   TABLES
+   ======================================== */
+
+.table-container {
+  overflow-x: auto;
+  margin: var(--space-lg) 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--md-outline-variant);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: var(--md-surface-container-high);
+  color: var(--md-primary);
+  font-weight: 600;
+  text-align: left;
+  padding: var(--space-md);
+  border-bottom: 2px solid var(--md-primary);
+}
+
+td {
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--md-outline-variant);
+  color: var(--md-on-surface-variant);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background: var(--md-surface-container-low);
+}
+
+.values-table th,
+.values-table td {
+  text-align: center;
+  padding: var(--space-sm) var(--space-md);
+}
+
+/* ========================================
+   EXAMPLES
+   ======================================== */
+
+.example {
+  background: var(--md-surface-container);
+  border: 1px solid var(--md-outline-variant);
+  border-radius: var(--radius-lg);
+  margin: var(--space-lg) 0;
+  overflow: hidden;
+}
+
+.example-header {
+  background: var(--md-tertiary);
+  padding: var(--space-sm) var(--space-md);
+  font-weight: 600;
+  color: var(--md-on-tertiary);
+}
+
+.example-content {
+  padding: var(--space-lg);
+}
+
+.example-problem {
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px dashed var(--md-outline-variant);
+}
+
+.solution-label {
+  font-size: var(--text-label-lg);
+  font-weight: 600;
+  color: var(--md-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-xs);
+}
+
+.solution-steps {
+  background: var(--md-surface-container-lowest);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  font-family: var(--font-mono);
+  font-size: var(--text-body-md);
+  line-height: 2;
+}
+
+/* ========================================
+   EXERCISES
+   ======================================== */
+
+.exercises {
+  background: var(--md-surface-container-low);
+  border: 1px solid var(--md-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin: var(--space-lg) 0;
+}
+
+.exercises-title {
+  font-size: var(--text-title-md);
+  font-weight: 600;
+  color: var(--md-primary);
+  margin-bottom: var(--space-md);
+}
+
+.exercise-level {
+  margin-bottom: var(--space-lg);
+}
+
+.level-badge {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--md-surface-container-high);
+  color: var(--md-on-surface-variant);
+  font-size: var(--text-label-lg);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.level-badge.advanced {
+  background: var(--md-primary-container);
+  color: var(--md-on-primary-container);
+}
+
+.level-badge.expert {
+  background: var(--md-tertiary-container);
+  color: var(--md-on-tertiary-container);
+}
+
+.exercise-list {
+  list-style: none;
+}
+
+.exercise-list li {
+  padding: var(--space-sm) 0;
+  padding-left: var(--space-xl);
+  position: relative;
+  color: var(--md-on-surface);
+}
+
+.exercise-list li::before {
+  content: attr(data-num) ".";
+  position: absolute;
+  left: 0;
+  font-weight: 600;
+  color: var(--md-primary);
+}
+
+/* Facit */
+.facit {
+  margin-top: var(--space-lg);
+  border-top: 1px solid var(--md-outline-variant);
+  padding-top: var(--space-md);
+}
+
+.facit-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--md-surface-container-high);
+  border: 1px solid var(--md-outline-variant);
+  color: var(--md-on-surface-variant);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-size: var(--text-body-md);
+  font-weight: 500;
+  transition: all var(--motion-fast);
+}
+
+.facit-toggle:hover {
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+  border-color: var(--md-primary);
+}
+
+.facit-content {
+  display: none;
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  background: var(--md-surface-container-lowest);
+  border-radius: var(--radius-md);
+}
+
+.facit-content.visible {
+  display: block;
+  animation: fadeSlideIn 0.3s ease-out;
+}
+
+body.focus-mode .facit-content.visible {
+  animation: none;
+}
+
+.facit-item {
+  padding: var(--space-xs) 0;
+  font-size: var(--text-body-md);
+  color: var(--md-on-surface-variant);
+}
+
+/* ========================================
+   INTERACTIVE GRAPHS - DESMOS
+   ======================================== */
+
+.graph-container {
+  margin: var(--space-lg) 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid var(--md-outline-variant);
+  background: var(--md-surface-container);
+}
+
+.graph-container iframe,
+.graph-container .desmos-graph {
+  width: 100%;
+  height: 400px;
+  border: none;
+  display: block;
+}
+
+.graph-caption {
+  background: var(--md-surface-container-high);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-body-md);
+  color: var(--md-on-surface-variant);
+  text-align: center;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+
+.lesson-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--md-outline-variant);
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--md-surface-container);
+  border: 1px solid var(--md-outline-variant);
+  border-radius: var(--radius-full);
+  color: var(--md-on-surface-variant);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--motion-spring);
+}
+
+.nav-btn:hover {
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+  border-color: var(--md-primary);
+  transform: translateY(-2px);
+}
+
+body.focus-mode .nav-btn:hover {
+  transform: none;
+}
+
+.nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   INFO BOXES
+   ======================================== */
+
+.info-box {
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  margin: var(--space-md) 0;
+  border-left: 4px solid;
+}
+
+.info-box.tip {
+  background: rgba(0, 191, 165, 0.1);
+  border-color: var(--md-secondary);
+}
+
+.info-box.warning {
+  background: rgba(255, 193, 7, 0.1);
+  border-color: var(--md-warning);
+}
+
+.info-box.important {
+  background: rgba(123, 94, 189, 0.1);
+  border-color: var(--md-primary);
+}
+
+.info-box-title {
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+/* Diagram placeholder */
+.diagram {
+  background: var(--md-surface-container-high);
+  border: 1px dashed var(--md-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-body-md);
+  color: var(--md-on-surface-variant);
+  white-space: pre;
+  line-height: 1.4;
+}
+
+/* ========================================
+   PROGRESS INDICATOR (Focus Mode)
+   ======================================== */
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--md-primary);
+  z-index: 1001;
+  transition: width 0.1s linear;
+  display: none;
+}
+
+body.focus-mode .progress-bar {
+  display: block;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  :root {
+    --text-display-md: 2rem;
+    --text-headline-lg: 1.5rem;
+    --text-headline-md: 1.25rem;
+  }
+  
+  .settings-panel {
+    top: var(--space-sm);
+    right: var(--space-sm);
+  }
+  
+  .settings-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .hero {
+    padding: var(--space-xl) var(--space-md);
+  }
+  
+  .home-content {
+    padding: var(--space-md);
+  }
+  
+  .lesson-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: var(--space-sm);
+  }
+  
+  .lesson-card {
+    padding: var(--space-md) var(--space-sm);
+  }
+  
+  .lesson-page {
+    padding: 0 var(--space-md) var(--space-xl);
+  }
+  
+  .formula-box .katex {
+    font-size: 1.1em;
+  }
+  
+  .lesson-nav {
+    flex-direction: column;
+  }
+  
+  .nav-btn {
+    justify-content: center;
+  }
+}
+
+/* ========================================
+   SCROLLBAR
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--md-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--md-surface-container-highest);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-primary);
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+  .settings-panel,
+  .nav-btn,
+  .facit-toggle,
+  .progress-bar {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .lesson {
+    page-break-after: always;
+  }
+}

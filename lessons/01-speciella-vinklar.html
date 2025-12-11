@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion 1: Speciella Vinklar - Trigonometri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <!-- Progress Bar (Focus Mode) -->
+  <div class="progress-bar" id="progressBar"></div>
+  
+  <!-- Settings Panel -->
+  <div class="settings-panel">
+    <button class="settings-btn theme-toggle" onclick="toggleTheme()" title="Byt tema">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+    <button class="settings-btn focus-toggle" onclick="toggleFocus()" title="Enhanced Focus">
+      <span class="icon-focus">🎯</span>
+      <span class="icon-focus-off">✨</span>
+    </button>
+  </div>
+
+  <a href="../index.html" class="back-link">← Tillbaka till översikt</a>
+  
+  <main class="lesson-page">
+    <article class="lesson">
+      <header class="lesson-header">
+        <span class="lesson-badge">Lektion 1</span>
+        <h1 class="lesson-title">Repetition och Speciella Vinklar</h1>
+      </header>
+      
+      <div class="learning-goals">
+        <h3>📚 Lärandemål</h3>
+        <ul>
+          <li>Repetera grundläggande trigonometri i rätvinkliga trianglar</li>
+          <li>Kunna de exakta värdena för speciella vinklar (30°, 45°, 60°)</li>
+          <li>Förstå sambanden mellan sinus, cosinus och tangens</li>
+        </ul>
+      </div>
+      
+      <section class="section">
+        <h2 class="section-title">Grundläggande Definitioner</h2>
+        
+        <p>I en <strong>rätvinklig triangel</strong> definieras de trigonometriska funktionerna utifrån förhållandet mellan sidorna:</p>
+        
+        <div class="diagram">        /|
+       / |
+  c   /  | a (motstående)
+     /   |
+    /θ   |
+   /____|
+      b (närliggande)</div>
+        
+        <div class="table-container">
+          <table>
+            <tr><th>Funktion</th><th>Definition</th><th>Minnesregel</th></tr>
+            <tr><td>$\sin \theta$</td><td>$\dfrac{\text{motstående}}{\text{hypotenusa}} = \dfrac{a}{c}$</td><td><strong>S</strong>OH</td></tr>
+            <tr><td>$\cos \theta$</td><td>$\dfrac{\text{närliggande}}{\text{hypotenusa}} = \dfrac{b}{c}$</td><td><strong>C</strong>AH</td></tr>
+            <tr><td>$\tan \theta$</td><td>$\dfrac{\text{motstående}}{\text{närliggande}} = \dfrac{a}{b}$</td><td><strong>T</strong>OA</td></tr>
+          </table>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Speciella Vinklar - Exakta Värden</h2>
+        
+        <h3 class="subsection-title">45°-triangeln (likbent rätvinklig)</h3>
+        <p>En kvadrat med sidan 1 delas diagonalt. Kateterna = 1, Hypotenusan = $\sqrt{2}$</p>
+        
+        <h3 class="subsection-title">30°-60°-triangeln</h3>
+        <p>En liksidig triangel med sidan 2 delas på mitten: kort katet = 1, lång katet = $\sqrt{3}$, hypotenusa = 2</p>
+        
+        <div class="table-container">
+          <table class="values-table">
+            <tr><th>Vinkel</th><th>$\sin$</th><th>$\cos$</th><th>$\tan$</th></tr>
+            <tr><td>$30°$</td><td>$\dfrac{1}{2}$</td><td>$\dfrac{\sqrt{3}}{2}$</td><td>$\dfrac{\sqrt{3}}{3}$</td></tr>
+            <tr><td>$45°$</td><td>$\dfrac{\sqrt{2}}{2}$</td><td>$\dfrac{\sqrt{2}}{2}$</td><td>$1$</td></tr>
+            <tr><td>$60°$</td><td>$\dfrac{\sqrt{3}}{2}$</td><td>$\dfrac{1}{2}$</td><td>$\sqrt{3}$</td></tr>
+          </table>
+        </div>
+        
+        <div class="formula-box">
+          <div class="formula-label">Viktiga samband</div>
+          $$\tan \theta = \frac{\sin \theta}{\cos \theta} \qquad \sin^2\theta + \cos^2\theta = 1$$
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Genomgångna Exempel</h2>
+        
+        <div class="example">
+          <div class="example-header">Exempel 1</div>
+          <div class="example-content">
+            <div class="example-problem">Beräkna exakt värde av $\sin 60° \cdot \cos 30°$</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$\sin 60° \cdot \cos 30° = \frac{\sqrt{3}}{2} \cdot \frac{\sqrt{3}}{2} = \frac{3}{4}$$
+            </div>
+          </div>
+        </div>
+        
+        <div class="example">
+          <div class="example-header">Exempel 2</div>
+          <div class="example-content">
+            <div class="example-problem">En stege lutar mot en vägg med vinkeln 60° mot marken. Stegen är 4 meter lång. Hur högt når stegen?</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$\sin 60° = \frac{h}{4}$$
+$$h = 4 \cdot \sin 60° = 4 \cdot \frac{\sqrt{3}}{2} = 2\sqrt{3} \approx 3{,}46 \text{ m}$$
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="exercises">
+        <h2 class="exercises-title">📝 Övningar</h2>
+        
+        <div class="exercise-level">
+          <span class="level-badge">Nivå E - Grundläggande</span>
+          <ol class="exercise-list">
+            <li data-num="1">Beräkna utan miniräknare: a) $\sin 45°$ b) $\cos 60°$ c) $\tan 30°$</li>
+            <li data-num="2">En ramp har lutningen 30° och är 6 m lång. Hur hög är rampen?</li>
+            <li data-num="3">Förenkla: $\sin^2 30° + \cos^2 30°$</li>
+            <li data-num="4">Beräkna $\cos 45° + \sin 45°$</li>
+            <li data-num="5">Ett torn kastar en skugga som är 20 m lång. Solens vinkel är 60°. Hur högt är tornet?</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge advanced">Nivå C - Tillämpning</span>
+          <ol class="exercise-list">
+            <li data-num="6">Beräkna exakt: $\sin 30° \cdot \cos 60° + \cos 30° \cdot \sin 60°$</li>
+            <li data-num="7">En kran har en arm som är 15 m lång och lutar 45° mot marken. Hur högt är armens ände?</li>
+            <li data-num="8">Beräkna: $\dfrac{\sin 60°}{\cos 30°}$</li>
+            <li data-num="9">En rektangulär flaggstång kastar skugga. När solhöjden är 30° är skuggan 12 m. Hur lång är skuggan när solhöjden är 60°?</li>
+            <li data-num="10">Förenkla: $\tan 60° - \tan 30°$</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge expert">Nivå A - Avancerat</span>
+          <ol class="exercise-list">
+            <li data-num="11">Visa att $\tan 60° = \dfrac{2\tan 30°}{1-\tan^2 30°}$</li>
+            <li data-num="12">Beräkna exakt: $(\sin 45° + \cos 45°)^2$</li>
+            <li data-num="13">Om $\sin \alpha = \dfrac{1}{2}$ och $0° < \alpha < 90°$, beräkna $\cos \alpha$ och $\tan \alpha$.</li>
+            <li data-num="14">Beräkna: $\sin^2 60° - \cos^2 60°$</li>
+            <li data-num="15">Visa att $\dfrac{\sin 60°}{\sin 30°} = \sqrt{3}$</li>
+            <li data-num="16">Ett tak har en lutning på 30°. Takets horisontella längd är 8 m. Beräkna takets faktiska längd (mätt längs takytan).</li>
+            <li data-num="17">Beräkna exakt: $\dfrac{1 - \cos 60°}{\sin 60°}$</li>
+          </ol>
+        </div>
+        
+        <div class="facit">
+          <button class="facit-toggle" onclick="this.nextElementSibling.classList.toggle('visible'); this.textContent = this.nextElementSibling.classList.contains('visible') ? '👁 Dölj facit' : '👁 Visa facit'">👁 Visa facit</button>
+          <div class="facit-content">
+            <div class="facit-item"><strong>1.</strong> a) $\frac{\sqrt{2}}{2}$ b) $\frac{1}{2}$ c) $\frac{\sqrt{3}}{3}$</div>
+            <div class="facit-item"><strong>2.</strong> $h = 6 \cdot \sin 30° = 3$ m</div>
+            <div class="facit-item"><strong>3.</strong> $= 1$ (trigonometriska ettan)</div>
+            <div class="facit-item"><strong>4.</strong> $= \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2} = \sqrt{2}$</div>
+            <div class="facit-item"><strong>5.</strong> $h = 20 \cdot \tan 60° = 20\sqrt{3} \approx 34{,}6$ m</div>
+            <div class="facit-item"><strong>6.</strong> $= \frac{1}{2} \cdot \frac{1}{2} + \frac{\sqrt{3}}{2} \cdot \frac{\sqrt{3}}{2} = \frac{1}{4} + \frac{3}{4} = 1$</div>
+            <div class="facit-item"><strong>7.</strong> $h = 15 \cdot \sin 45° = \frac{15\sqrt{2}}{2} \approx 10{,}6$ m</div>
+            <div class="facit-item"><strong>8.</strong> $= \frac{\sqrt{3}/2}{\sqrt{3}/2} = 1$</div>
+            <div class="facit-item"><strong>9.</strong> Höjd $h = 12 \cdot \tan 30° = 4\sqrt{3}$ m. Vid 60°: skugga $= \frac{4\sqrt{3}}{\tan 60°} = 4$ m</div>
+            <div class="facit-item"><strong>10.</strong> $= \sqrt{3} - \frac{\sqrt{3}}{3} = \frac{2\sqrt{3}}{3}$</div>
+            <div class="facit-item"><strong>11.</strong> VL: $\frac{2 \cdot \frac{\sqrt{3}}{3}}{1 - \frac{1}{3}} = \frac{\frac{2\sqrt{3}}{3}}{\frac{2}{3}} = \sqrt{3}$ = HL ✓</div>
+            <div class="facit-item"><strong>12.</strong> $= \left(\frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}\right)^2 = (\sqrt{2})^2 = 2$</div>
+            <div class="facit-item"><strong>13.</strong> $\alpha = 30°$, $\cos 30° = \frac{\sqrt{3}}{2}$, $\tan 30° = \frac{\sqrt{3}}{3}$</div>
+            <div class="facit-item"><strong>14.</strong> $= \frac{3}{4} - \frac{1}{4} = \frac{1}{2}$</div>
+            <div class="facit-item"><strong>15.</strong> $= \frac{\sqrt{3}/2}{1/2} = \sqrt{3}$ ✓</div>
+            <div class="facit-item"><strong>16.</strong> Längd $= \frac{8}{\cos 30°} = \frac{8}{\sqrt{3}/2} = \frac{16}{\sqrt{3}} = \frac{16\sqrt{3}}{3} \approx 9{,}24$ m</div>
+            <div class="facit-item"><strong>17.</strong> $= \frac{1 - 1/2}{\sqrt{3}/2} = \frac{1/2}{\sqrt{3}/2} = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$</div>
+          </div>
+        </div>
+      </section>
+      
+      <nav class="lesson-nav">
+        <span></span>
+        <a href="02-enhetscirkeln.html" class="nav-btn">Nästa →</a>
+      </nav>
+    </article>
+  </main>
+  
+  <script>
+    // KaTeX rendering
+    document.addEventListener('DOMContentLoaded', function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+        ],
+        throwOnError: false
+      });
+    });
+    
+    // Theme toggle
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    }
+    
+    // Focus mode toggle
+    function toggleFocus() {
+      document.body.classList.toggle('focus-mode');
+      localStorage.setItem('focusMode', document.body.classList.contains('focus-mode') ? 'on' : 'off');
+    }
+    
+    // Apply saved preferences
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+    if (localStorage.getItem('focusMode') === 'on') {
+      document.body.classList.add('focus-mode');
+    }
+    
+    // Progress bar
+    window.addEventListener('scroll', function() {
+      if (document.body.classList.contains('focus-mode')) {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+      }
+    });
+  </script>
+</body>
+</html>

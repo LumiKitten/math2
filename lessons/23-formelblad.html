@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formelblad - Trigonometri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <div class="settings-panel">
+    <button class="settings-btn theme-toggle" onclick="toggleTheme()" title="Byt tema">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+    <button class="settings-btn focus-toggle" onclick="toggleFocus()" title="Enhanced Focus">
+      <span class="icon-focus">🎯</span>
+      <span class="icon-focus-off">✨</span>
+    </button>
+  </div>
+
+  <a href="../index.html" class="back-link">← Tillbaka till översikt</a>
+  
+  <main class="lesson-page">
+    <article class="lesson formula-sheet">
+      <header class="lesson-header">
+        <span class="lesson-badge">📋 Referens</span>
+        <h1 class="lesson-title">Formelblad</h1>
+      </header>
+      
+      <section class="section">
+        <h2 class="section-title">Grundidentiteter</h2>
+        <div class="formula-box">
+          $$\sin^2 v + \cos^2 v = 1 \qquad \tan v = \frac{\sin v}{\cos v}$$
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Exakta Värden</h2>
+        <div class="table-container">
+          <table class="values-table">
+            <tr><th>$v$</th><th>$0°$</th><th>$30°$</th><th>$45°$</th><th>$60°$</th><th>$90°$</th></tr>
+            <tr><td>$\sin$</td><td>$0$</td><td>$\frac{1}{2}$</td><td>$\frac{\sqrt{2}}{2}$</td><td>$\frac{\sqrt{3}}{2}$</td><td>$1$</td></tr>
+            <tr><td>$\cos$</td><td>$1$</td><td>$\frac{\sqrt{3}}{2}$</td><td>$\frac{\sqrt{2}}{2}$</td><td>$\frac{1}{2}$</td><td>$0$</td></tr>
+            <tr><td>$\tan$</td><td>$0$</td><td>$\frac{\sqrt{3}}{3}$</td><td>$1$</td><td>$\sqrt{3}$</td><td>$-$</td></tr>
+          </table>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Triangelsatser</h2>
+        <div class="formula-box">
+          <div class="formula-label">Areasatsen</div>
+          $$A = \frac{1}{2}ab\sin C$$
+        </div>
+        <div class="formula-box">
+          <div class="formula-label">Sinussatsen</div>
+          $$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$$
+        </div>
+        <div class="formula-box">
+          <div class="formula-label">Cosinussatsen</div>
+          $$c^2 = a^2 + b^2 - 2ab\cos C$$
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Symmetrier</h2>
+        <div class="table-container">
+          <table class="values-table">
+            <tr><th>Relation</th><th>$\sin$</th><th>$\cos$</th></tr>
+            <tr><td>$-v$</td><td>$-\sin v$</td><td>$\cos v$</td></tr>
+            <tr><td>$90° - v$</td><td>$\cos v$</td><td>$\sin v$</td></tr>
+            <tr><td>$90° + v$</td><td>$\cos v$</td><td>$-\sin v$</td></tr>
+            <tr><td>$180° - v$</td><td>$\sin v$</td><td>$-\cos v$</td></tr>
+            <tr><td>$180° + v$</td><td>$-\sin v$</td><td>$-\cos v$</td></tr>
+          </table>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Additionsformler</h2>
+        <div class="formula-box">
+          $$\sin(u \pm v) = \sin u \cos v \pm \cos u \sin v$$
+          $$\cos(u \pm v) = \cos u \cos v \mp \sin u \sin v$$
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Dubbelvinkelformler</h2>
+        <div class="formula-box">
+          $$\sin 2v = 2\sin v \cos v$$
+          $$\cos 2v = \cos^2 v - \sin^2 v = 2\cos^2 v - 1 = 1 - 2\sin^2 v$$
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Omskrivning</h2>
+        <div class="formula-box">
+          $$a\sin x + b\cos x = \sqrt{a^2 + b^2} \sin(x + \varphi), \quad \tan \varphi = \frac{b}{a}$$
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Radianer</h2>
+        <div class="formula-box">
+          $$\pi \text{ rad} = 180°$$
+        </div>
+        <div class="table-container">
+          <table class="values-table">
+            <tr><th>Grader</th><th>$0°$</th><th>$30°$</th><th>$45°$</th><th>$60°$</th><th>$90°$</th><th>$180°$</th><th>$360°$</th></tr>
+            <tr><td>Radianer</td><td>$0$</td><td>$\frac{\pi}{6}$</td><td>$\frac{\pi}{4}$</td><td>$\frac{\pi}{3}$</td><td>$\frac{\pi}{2}$</td><td>$\pi$</td><td>$2\pi$</td></tr>
+          </table>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Allmänna Lösningar</h2>
+        <div class="formula-box">
+          $$\sin x = a: \quad x = \alpha + 360°n \text{ eller } x = (180° - \alpha) + 360°n$$
+          $$\cos x = a: \quad x = \pm\alpha + 360°n$$
+          $$\tan x = a: \quad x = \alpha + 180°n$$
+          <p style="margin-top: 0.5rem; font-size: 0.9rem;">där $\alpha$ är en baslösning och $n \in \mathbb{Z}$</p>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Trigonometriska Funktioner</h2>
+        <div class="formula-box">
+          <div class="formula-label">Generell sinusfunktion</div>
+          $$y = A\sin(Bx + \varphi) + C$$
+          <p style="margin-top: 0.5rem; font-size: 0.9rem;">Amplitud = $|A|$, Period = $\frac{360°}{|B|}$, Medelvärde = $C$</p>
+        </div>
+      </section>
+      
+      <nav class="lesson-nav">
+        <a href="22-modeller.html" class="nav-btn">← Föregående</a>
+        <a href="../index.html" class="nav-btn">Till översikt</a>
+      </nav>
+    </article>
+  </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      renderMathInElement(document.body, {
+        delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}],
+        throwOnError: false
+      });
+    });
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    }
+    function toggleFocus() {
+      document.body.classList.toggle('focus-mode');
+      localStorage.setItem('focusMode', document.body.classList.contains('focus-mode') ? 'on' : 'off');
+    }
+    if (localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+    if (localStorage.getItem('focusMode') === 'on') document.body.classList.add('focus-mode');
+    function toggleFont() {
+      document.body.classList.toggle('dyslexia-font');
+      localStorage.setItem('dyslexiaFont', document.body.classList.contains('dyslexia-font') ? 'on' : 'off');
+    }
+    if (localStorage.getItem('dyslexiaFont') === 'on') document.body.classList.add('dyslexia-font');
+    window.addEventListener('scroll', function() {
+      if (document.body.classList.contains('focus-mode')) {
+        const scrolled = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+      }
+    });
+  </script>
+</body>
+</html>

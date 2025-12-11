@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion 13: Additionsformler - Trigonometri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <div class="settings-panel">
+    <button class="settings-btn theme-toggle" onclick="toggleTheme()" title="Byt tema">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+    <button class="settings-btn focus-toggle" onclick="toggleFocus()" title="Enhanced Focus">
+      <span class="icon-focus">🎯</span>
+      <span class="icon-focus-off">✨</span>
+    </button>
+  </div>
+
+  <a href="../index.html" class="back-link">← Tillbaka till översikt</a>
+  
+  <main class="lesson-page">
+    <article class="lesson">
+      <header class="lesson-header">
+        <span class="lesson-badge">Lektion 13</span>
+        <h1 class="lesson-title">Additions- och Subtraktionsformler</h1>
+      </header>
+      
+      <div class="learning-goals">
+        <h3>📚 Lärandemål</h3>
+        <ul>
+          <li>Kunna additions- och subtraktionsformlerna för sin och cos</li>
+          <li>Tillämpa formlerna för att beräkna exakta värden</li>
+          <li>Förenkla trigonometriska uttryck</li>
+        </ul>
+      </div>
+      
+      <section class="section">
+        <h2 class="section-title">Additionsformler</h2>
+        <div class="formula-box">
+          <div class="formula-label">Sinus</div>
+          $$\sin(u + v) = \sin u \cos v + \cos u \sin v$$
+          $$\sin(u - v) = \sin u \cos v - \cos u \sin v$$
+        </div>
+        
+        <div class="formula-box">
+          <div class="formula-label">Cosinus</div>
+          $$\cos(u + v) = \cos u \cos v - \sin u \sin v$$
+          $$\cos(u - v) = \cos u \cos v + \sin u \sin v$$
+        </div>
+        
+        <div class="info-box tip">
+          <div class="info-box-title">💡 Minnesregel</div>
+          <p><strong>Sin:</strong> "sin-cos-cos-sin" (samma tecken som argumentet)</p>
+          <p><strong>Cos:</strong> "cos-cos-sin-sin" (minus för summa!)</p>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Genomgångna Exempel</h2>
+        
+        <div class="example">
+          <div class="example-header">Exempel 1</div>
+          <div class="example-content">
+            <div class="example-problem">Beräkna $\sin 75°$ exakt.</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$\sin 75° = \sin(45° + 30°)$$
+$$= \sin 45° \cos 30° + \cos 45° \sin 30°$$
+$$= \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{3}}{2} + \frac{\sqrt{2}}{2} \cdot \frac{1}{2} = \frac{\sqrt{6} + \sqrt{2}}{4}$$
+            </div>
+          </div>
+        </div>
+        
+        <div class="example">
+          <div class="example-header">Exempel 2</div>
+          <div class="example-content">
+            <div class="example-problem">Förenkla $\sin(v + 90°)$.</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$\sin(v + 90°) = \sin v \cos 90° + \cos v \sin 90° = \sin v \cdot 0 + \cos v \cdot 1 = \cos v$$
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="exercises">
+        <h2 class="exercises-title">📝 Övningar</h2>
+        
+        <div class="exercise-level">
+          <span class="level-badge">Nivå E - Grundläggande</span>
+          <ol class="exercise-list">
+            <li data-num="1">Beräkna $\cos 75°$ exakt (= $\cos(45° + 30°)$)</li>
+            <li data-num="2">Beräkna $\sin 15°$ exakt (= $\sin(45° - 30°)$)</li>
+            <li data-num="3">Beräkna $\cos 15°$ exakt</li>
+            <li data-num="4">Förenkla $\sin(v + 180°)$</li>
+            <li data-num="5">Förenkla $\cos(v - 90°)$</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge advanced">Nivå C - Tillämpning</span>
+          <ol class="exercise-list">
+            <li data-num="6">Visa att $\sin(180° - v) = \sin v$</li>
+            <li data-num="7">Visa att $\cos(180° + v) = -\cos v$</li>
+            <li data-num="8">Beräkna $\sin 105°$ exakt</li>
+            <li data-num="9">Förenkla $\cos(60° + v) + \cos(60° - v)$</li>
+            <li data-num="10">Om $\sin u = \frac{3}{5}$ (Q1) och $\cos v = \frac{5}{13}$ (Q1), beräkna $\sin(u+v)$</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge expert">Nivå A - Avancerat</span>
+          <ol class="exercise-list">
+            <li data-num="11">Beräkna $\cos(u+v)$ med samma värden som ovan</li>
+            <li data-num="12">Visa att $\sin(45° + v) + \sin(45° - v) = \sqrt{2}\cos v$</li>
+            <li data-num="13">Förenkla $\sin(A+B)\cos B - \cos(A+B)\sin B$</li>
+            <li data-num="14">Visa att $\cos(A+B)\cos(A-B) = \cos^2 A - \sin^2 B$</li>
+            <li data-num="15">Beräkna $\tan 75°$ exakt med hjälp av additionsformel</li>
+            <li data-num="16">Lös $\sin(x + 30°) = \sin(x - 30°)$ för $x \in [0°, 360°]$</li>
+            <li data-num="17">Visa att $\sin \alpha \cos \beta = \frac{1}{2}[\sin(\alpha+\beta) + \sin(\alpha-\beta)]$</li>
+          </ol>
+        </div>
+        
+        <div class="facit">
+          <button class="facit-toggle" onclick="this.nextElementSibling.classList.toggle('visible'); this.textContent = this.nextElementSibling.classList.contains('visible') ? '👁 Dölj facit' : '👁 Visa facit'">👁 Visa facit</button>
+          <div class="facit-content">
+            <div class="facit-item"><strong>1.</strong> $\cos 75° = \frac{\sqrt{6} - \sqrt{2}}{4}$</div>
+            <div class="facit-item"><strong>2.</strong> $\sin 15° = \frac{\sqrt{6} - \sqrt{2}}{4}$</div>
+            <div class="facit-item"><strong>3.</strong> $\cos 15° = \frac{\sqrt{6} + \sqrt{2}}{4}$</div>
+            <div class="facit-item"><strong>4.</strong> $\sin(v + 180°) = -\sin v$</div>
+            <div class="facit-item"><strong>5.</strong> $\cos(v - 90°) = \sin v$</div>
+            <div class="facit-item"><strong>6.</strong> $= \sin 180° \cos v - \cos 180° \sin v = 0 - (-1)\sin v = \sin v$ ✓</div>
+            <div class="facit-item"><strong>7.</strong> $= \cos 180° \cos v - \sin 180° \sin v = -\cos v - 0 = -\cos v$ ✓</div>
+            <div class="facit-item"><strong>8.</strong> $\sin 105° = \sin(60° + 45°) = \frac{\sqrt{6} + \sqrt{2}}{4}$</div>
+            <div class="facit-item"><strong>9.</strong> $= 2\cos 60° \cos v = \cos v$</div>
+            <div class="facit-item"><strong>10.</strong> $\cos u = \frac{4}{5}$, $\sin v = \frac{12}{13}$. $\sin(u+v) = \frac{3}{5} \cdot \frac{5}{13} + \frac{4}{5} \cdot \frac{12}{13} = \frac{63}{65}$</div>
+            <div class="facit-item"><strong>11.</strong> $\cos(u+v) = \frac{4}{5} \cdot \frac{5}{13} - \frac{3}{5} \cdot \frac{12}{13} = \frac{20-36}{65} = -\frac{16}{65}$</div>
+            <div class="facit-item"><strong>12.</strong> $= \frac{\sqrt{2}}{2}(\cos v + \sin v) + \frac{\sqrt{2}}{2}(\cos v - \sin v) = \sqrt{2}\cos v$ ✓</div>
+            <div class="facit-item"><strong>13.</strong> $= \sin A$ (genom utveckling)</div>
+            <div class="facit-item"><strong>14.</strong> Utveckla och förenkla, använd trig. ettan</div>
+            <div class="facit-item"><strong>15.</strong> $\tan 75° = 2 + \sqrt{3}$</div>
+            <div class="facit-item"><strong>16.</strong> $x = 90°$ eller $x = 270°$</div>
+            <div class="facit-item"><strong>17.</strong> Addera formlerna för $\sin(\alpha+\beta)$ och $\sin(\alpha-\beta)$, dela med 2</div>
+          </div>
+        </div>
+      </section>
+      
+      <nav class="lesson-nav">
+        <a href="12-trigonometriska-ettan.html" class="nav-btn">← Föregående</a>
+        <a href="14-dubbla-vinkeln.html" class="nav-btn">Nästa →</a>
+      </nav>
+    </article>
+  </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      renderMathInElement(document.body, {
+        delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}],
+        throwOnError: false
+      });
+    });
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    }
+    function toggleFocus() {
+      document.body.classList.toggle('focus-mode');
+      localStorage.setItem('focusMode', document.body.classList.contains('focus-mode') ? 'on' : 'off');
+    }
+    if (localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+    if (localStorage.getItem('focusMode') === 'on') document.body.classList.add('focus-mode');
+    function toggleFont() {
+      document.body.classList.toggle('dyslexia-font');
+      localStorage.setItem('dyslexiaFont', document.body.classList.contains('dyslexia-font') ? 'on' : 'off');
+    }
+    if (localStorage.getItem('dyslexiaFont') === 'on') document.body.classList.add('dyslexia-font');
+    window.addEventListener('scroll', function() {
+      if (document.body.classList.contains('focus-mode')) {
+        const scrolled = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+      }
+    });
+  </script>
+</body>
+</html>

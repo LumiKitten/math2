@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion 4: Areasatsen - Trigonometri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <!-- Progress Bar (Focus Mode) -->
+  <div class="progress-bar" id="progressBar"></div>
+  
+  <!-- Settings Panel -->
+  <div class="settings-panel">
+    <button class="settings-btn theme-toggle" onclick="toggleTheme()" title="Byt tema">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+    <button class="settings-btn focus-toggle" onclick="toggleFocus()" title="Enhanced Focus">
+      <span class="icon-focus">🎯</span>
+      <span class="icon-focus-off">✨</span>
+    </button>
+  </div>
+
+  <a href="../index.html" class="back-link">← Tillbaka till översikt</a>
+  
+  <main class="lesson-page">
+    <article class="lesson">
+      <header class="lesson-header">
+        <span class="lesson-badge">Lektion 4</span>
+        <h1 class="lesson-title">Areasatsen</h1>
+      </header>
+      
+      <div class="learning-goals">
+        <h3>📚 Lärandemål</h3>
+        <ul>
+          <li>Kunna och tillämpa areasatsen för trianglar</li>
+          <li>Beräkna area när två sidor och mellanliggande vinkel är kända</li>
+          <li>Lösa problem baklänges - bestämma sida eller vinkel från given area</li>
+        </ul>
+      </div>
+      
+      <section class="section">
+        <h2 class="section-title">Areasatsen</h2>
+        
+        <div class="formula-box">
+          <div class="formula-label">Areasatsen</div>
+          $$A = \frac{1}{2}ab\sin C$$
+          <p style="margin-top: 0.5rem; font-size: 0.9rem;">där $a$ och $b$ är två sidor och $C$ är vinkeln mellan dem</p>
+        </div>
+        
+        <div class="info-box tip">
+          <div class="info-box-title">💡 Motsvarande former</div>
+          <p>$A = \frac{1}{2}bc\sin A = \frac{1}{2}ac\sin B = \frac{1}{2}ab\sin C$</p>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Genomgångna Exempel</h2>
+        
+        <div class="example">
+          <div class="example-header">Exempel 1</div>
+          <div class="example-content">
+            <div class="example-problem">Beräkna arean av en triangel med sidorna $a = 8$ cm, $b = 5$ cm och mellanliggande vinkel $C = 60°$.</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$A = \frac{1}{2} \cdot 8 \cdot 5 \cdot \sin 60°$$
+$$A = \frac{1}{2} \cdot 8 \cdot 5 \cdot \frac{\sqrt{3}}{2}$$
+$$A = 10\sqrt{3} \approx 17{,}3 \text{ cm}^2$$
+            </div>
+          </div>
+        </div>
+        
+        <div class="example">
+          <div class="example-header">Exempel 2</div>
+          <div class="example-content">
+            <div class="example-problem">En triangel har sidorna $a = 10$ cm, $b = 12$ cm och area $30$ cm². Bestäm vinkeln $C$.</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$30 = \frac{1}{2} \cdot 10 \cdot 12 \cdot \sin C$$
+$$30 = 60 \sin C$$
+$$\sin C = \frac{1}{2}$$
+$$C = 30° \text{ eller } C = 150°$$
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="exercises">
+        <h2 class="exercises-title">📝 Övningar</h2>
+        
+        <div class="exercise-level">
+          <span class="level-badge">Nivå E - Grundläggande</span>
+          <ol class="exercise-list">
+            <li data-num="1">Beräkna arean då $a = 6$ cm, $b = 8$ cm, $C = 30°$</li>
+            <li data-num="2">Beräkna arean då $a = 10$ m, $b = 10$ m, $C = 90°$</li>
+            <li data-num="3">Beräkna arean då $a = 5$ cm, $b = 12$ cm, $C = 45°$</li>
+            <li data-num="4">En triangel har sidorna 7 cm och 9 cm med vinkel 60° mellan dem. Beräkna arean.</li>
+            <li data-num="5">Beräkna arean av en liksidig triangel med sidan 6 cm.</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge advanced">Nivå C - Tillämpning</span>
+          <ol class="exercise-list">
+            <li data-num="6">En triangel har $a = 8$ cm, $b = 10$ cm och $A = 20$ cm². Bestäm $\sin C$.</li>
+            <li data-num="7">En parallellogram har sidorna 5 cm och 8 cm. Vinkeln mellan sidorna är 60°. Beräkna parallellogrammens area.</li>
+            <li data-num="8">En triangel har sidorna 6 cm och 8 cm. Beräkna den maximala möjliga arean.</li>
+            <li data-num="9">Ett segelfält är format som en triangel med sidorna 4 m och 6 m. Vinkeln mellan dem är 50°. Beräkna ytan.</li>
+            <li data-num="10">En triangel har arean $25\sqrt{3}$ cm² och två sidor som är 10 cm vardera. Bestäm vinkeln mellan dem.</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge expert">Nivå A - Avancerat</span>
+          <ol class="exercise-list">
+            <li data-num="11">En romb har diagonalerna 10 cm och 24 cm. Beräkna rombs area med areasatsen.</li>
+            <li data-num="12">En triangel har sidorna $a$, $2a$ och vinkeln $120°$ mellan dem. Arean är $50\sqrt{3}$ cm². Bestäm $a$.</li>
+            <li data-num="13">Visa att arean av en liksidig triangel med sidan $s$ är $\frac{s^2\sqrt{3}}{4}$.</li>
+            <li data-num="14">Ett fält har formen av en fyrhörning ABCD. AB = 50 m, BC = 40 m, ∠ABC = 110°. Triangeln ABC har arean ≈ 940 m². Verifiera detta.</li>
+            <li data-num="15">En triangel har sidorna $a = 7$ och $b = 10$. För vilken vinkel $C$ blir arean maximalt? Beräkna maxarean.</li>
+            <li data-num="16">Två sidor av en triangel är 8 cm och 15 cm. Arean är 36 cm². Bestäm alla möjliga värden på vinkeln mellan sidorna.</li>
+            <li data-num="17">En reguljär hexagon (sexhörning) har sidan 6 cm. Beräkna dess area med hjälp av areasatsen.</li>
+          </ol>
+        </div>
+        
+        <div class="facit">
+          <button class="facit-toggle" onclick="this.nextElementSibling.classList.toggle('visible'); this.textContent = this.nextElementSibling.classList.contains('visible') ? '👁 Dölj facit' : '👁 Visa facit'">👁 Visa facit</button>
+          <div class="facit-content">
+            <div class="facit-item"><strong>1.</strong> $A = \frac{1}{2} \cdot 6 \cdot 8 \cdot \frac{1}{2} = 12$ cm²</div>
+            <div class="facit-item"><strong>2.</strong> $A = \frac{1}{2} \cdot 10 \cdot 10 \cdot 1 = 50$ m²</div>
+            <div class="facit-item"><strong>3.</strong> $A = \frac{1}{2} \cdot 5 \cdot 12 \cdot \frac{\sqrt{2}}{2} = 15\sqrt{2} \approx 21{,}2$ cm²</div>
+            <div class="facit-item"><strong>4.</strong> $A = \frac{1}{2} \cdot 7 \cdot 9 \cdot \frac{\sqrt{3}}{2} = \frac{63\sqrt{3}}{4} \approx 27{,}3$ cm²</div>
+            <div class="facit-item"><strong>5.</strong> $A = \frac{1}{2} \cdot 6 \cdot 6 \cdot \sin 60° = 9\sqrt{3} \approx 15{,}6$ cm²</div>
+            <div class="facit-item"><strong>6.</strong> $\sin C = \frac{2 \cdot 20}{8 \cdot 10} = \frac{1}{2}$</div>
+            <div class="facit-item"><strong>7.</strong> $A = 2 \cdot \frac{1}{2} \cdot 5 \cdot 8 \cdot \sin 60° = 20\sqrt{3} \approx 34{,}6$ cm²</div>
+            <div class="facit-item"><strong>8.</strong> Max vid $C = 90°$: $A = \frac{1}{2} \cdot 6 \cdot 8 = 24$ cm²</div>
+            <div class="facit-item"><strong>9.</strong> $A = \frac{1}{2} \cdot 4 \cdot 6 \cdot \sin 50° \approx 9{,}2$ m²</div>
+            <div class="facit-item"><strong>10.</strong> $\sin C = \frac{2 \cdot 25\sqrt{3}}{100} = \frac{\sqrt{3}}{2} \Rightarrow C = 60°$ eller $120°$</div>
+            <div class="facit-item"><strong>11.</strong> Halva diagonalerna: 5 och 12. Area = $4 \cdot \frac{1}{2} \cdot 5 \cdot 12 = 120$ cm²</div>
+            <div class="facit-item"><strong>12.</strong> $50\sqrt{3} = \frac{1}{2} \cdot a \cdot 2a \cdot \sin 120° = a^2 \cdot \frac{\sqrt{3}}{2} \Rightarrow a = 10$ cm</div>
+            <div class="facit-item"><strong>13.</strong> $A = \frac{1}{2} s^2 \sin 60° = \frac{1}{2} s^2 \cdot \frac{\sqrt{3}}{2} = \frac{s^2\sqrt{3}}{4}$ ✓</div>
+            <div class="facit-item"><strong>14.</strong> $A = \frac{1}{2} \cdot 50 \cdot 40 \cdot \sin 110° \approx 940$ m² ✓</div>
+            <div class="facit-item"><strong>15.</strong> Max vid $C = 90°$: $A = \frac{1}{2} \cdot 7 \cdot 10 = 35$ areaenheter</div>
+            <div class="facit-item"><strong>16.</strong> $\sin C = \frac{72}{120} = 0{,}6 \Rightarrow C \approx 36{,}9°$ eller $\approx 143{,}1°$</div>
+            <div class="facit-item"><strong>17.</strong> $A = 6 \cdot \frac{1}{2} \cdot 6 \cdot 6 \cdot \sin 60° = 54\sqrt{3} \approx 93{,}5$ cm²</div>
+          </div>
+        </div>
+      </section>
+      
+      <nav class="lesson-nav">
+        <a href="03-trigonometriska-ekvationer.html" class="nav-btn">← Föregående</a>
+        <a href="05-sinussatsen.html" class="nav-btn">Nästa →</a>
+      </nav>
+    </article>
+  </main>
+  
+  <script>
+    // KaTeX rendering
+    document.addEventListener('DOMContentLoaded', function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+        ],
+        throwOnError: false
+      });
+    });
+    
+    // Theme toggle
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    }
+    
+    // Focus mode toggle
+    function toggleFocus() {
+      document.body.classList.toggle('focus-mode');
+      localStorage.setItem('focusMode', document.body.classList.contains('focus-mode') ? 'on' : 'off');
+    }
+    
+    // Apply saved preferences
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+    if (localStorage.getItem('focusMode') === 'on') {
+      document.body.classList.add('focus-mode');
+    }
+    
+    // Progress bar
+    window.addEventListener('scroll', function() {
+      if (document.body.classList.contains('focus-mode')) {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+      }
+    });
+  </script>
+</body>
+</html>

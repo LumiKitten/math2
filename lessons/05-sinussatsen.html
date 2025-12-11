@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion 5: Sinussatsen - Trigonometri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <div class="settings-panel">
+    <button class="settings-btn theme-toggle" onclick="toggleTheme()" title="Byt tema">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+    <button class="settings-btn focus-toggle" onclick="toggleFocus()" title="Enhanced Focus">
+      <span class="icon-focus">🎯</span>
+      <span class="icon-focus-off">✨</span>
+    </button>
+  </div>
+
+  <a href="../index.html" class="back-link">← Tillbaka till översikt</a>
+  
+  <main class="lesson-page">
+    <article class="lesson">
+      <header class="lesson-header">
+        <span class="lesson-badge">Lektion 5</span>
+        <h1 class="lesson-title">Sinussatsen</h1>
+      </header>
+      
+      <div class="learning-goals">
+        <h3>📚 Lärandemål</h3>
+        <ul>
+          <li>Förstå och tillämpa sinussatsen</li>
+          <li>Bestämma okända sidor och vinklar i godtyckliga trianglar</li>
+          <li>Identifiera när sinussatsen är lämplig att använda</li>
+        </ul>
+      </div>
+      
+      <section class="section">
+        <h2 class="section-title">Sinussatsen</h2>
+        
+        <div class="formula-box">
+          <div class="formula-label">Sinussatsen</div>
+          $$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$$
+        </div>
+        
+        <div class="info-box tip">
+          <div class="info-box-title">💡 När används sinussatsen?</div>
+          <p>Sinussatsen används när man känner till en sida och dess motstående vinkel, plus ytterligare en sida eller vinkel.</p>
+        </div>
+        
+        <div class="info-box warning">
+          <div class="info-box-title">⚠️ Tvetydigt fall</div>
+          <p>När man löser ut en vinkel med sinussatsen kan det finnas två möjliga lösningar (en spetsig och en trubbig vinkel).</p>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Genomgångna Exempel</h2>
+        
+        <div class="example">
+          <div class="example-header">Exempel 1 - Bestäm sida</div>
+          <div class="example-content">
+            <div class="example-problem">I triangel ABC är $A = 30°$, $B = 70°$ och $a = 5$ cm. Bestäm $b$.</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$\frac{a}{\sin A} = \frac{b}{\sin B}$$
+$$\frac{5}{\sin 30°} = \frac{b}{\sin 70°}$$
+$$b = \frac{5 \cdot \sin 70°}{\sin 30°} = \frac{5 \cdot 0{,}940}{0{,}5} \approx 9{,}4 \text{ cm}$$
+            </div>
+          </div>
+        </div>
+        
+        <div class="example">
+          <div class="example-header">Exempel 2 - Bestäm vinkel</div>
+          <div class="example-content">
+            <div class="example-problem">I triangel ABC är $a = 8$, $b = 10$ och $A = 45°$. Bestäm $B$.</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$\frac{a}{\sin A} = \frac{b}{\sin B}$$
+$$\sin B = \frac{b \cdot \sin A}{a} = \frac{10 \cdot \sin 45°}{8} = \frac{10 \cdot \frac{\sqrt{2}}{2}}{8} = \frac{5\sqrt{2}}{8} \approx 0{,}884$$
+$$B \approx 62° \text{ eller } B \approx 118°$$
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="exercises">
+        <h2 class="exercises-title">📝 Övningar</h2>
+        
+        <div class="exercise-level">
+          <span class="level-badge">Nivå E - Grundläggande</span>
+          <ol class="exercise-list">
+            <li data-num="1">$A = 40°$, $B = 60°$, $a = 8$ cm. Bestäm $b$.</li>
+            <li data-num="2">$A = 50°$, $C = 70°$, $c = 12$ cm. Bestäm $a$.</li>
+            <li data-num="3">$B = 30°$, $C = 90°$, $b = 6$ cm. Bestäm $c$.</li>
+            <li data-num="4">$A = 45°$, $B = 90°$, $a = 10$ m. Bestäm $b$.</li>
+            <li data-num="5">$A = 60°$, $B = 60°$, $a = 7$ cm. Bestäm $b$.</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge advanced">Nivå C - Tillämpning</span>
+          <ol class="exercise-list">
+            <li data-num="6">$a = 15$, $c = 20$, $A = 35°$. Bestäm $C$.</li>
+            <li data-num="7">Två sidor av en triangel är 8 cm och 12 cm. Vinkeln mot den korta sidan är 30°. Bestäm vinkeln mot den långa sidan.</li>
+            <li data-num="8">$A = 72°$, $B = 48°$, $c = 15$ cm. Bestäm $a$ och $b$.</li>
+            <li data-num="9">Ett flyg startar och flyger 200 km i riktning N30°O. Sedan svänger det och flyger till en punkt som är 150 km rakt österut från start. Hur långt flyger planet totalt?</li>
+            <li data-num="10">$a = 6$, $b = 9$, $A = 25°$. Bestäm alla möjliga värden på $B$.</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge expert">Nivå A - Avancerat</span>
+          <ol class="exercise-list">
+            <li data-num="11">I triangel ABC gäller $\frac{a}{\sin A} = 10$. Bestäm triangelns omkrets om $A = 60°$, $B = 45°$.</li>
+            <li data-num="12">Visa att i varje triangel gäller $\frac{a + b}{c} = \frac{\sin A + \sin B}{\sin C}$.</li>
+            <li data-num="13">I en triangel är $a : b : c = 3 : 4 : 5$. Bestäm den största vinkeln.</li>
+            <li data-num="14">Två fartyg lämnar samma hamn. Det första seglar N50°O med hastigheten 15 knop, det andra seglar N20°V med 12 knop. Hur långt ifrån varandra är de efter 2 timmar?</li>
+            <li data-num="15">I triangel ABC är $B = 2A$ och $a = 5$, $b = 8$. Bestäm $A$ och $B$.</li>
+            <li data-num="16">Härleda formeln för omkretsen av en regelbunden $n$-hörning inskriven i en cirkel med radie $R$.</li>
+            <li data-num="17">En 10 m hög flaggstång står på en sluttning med 15° lutning. Från en punkt 25 m nerför sluttningen är höjningsvinkeln till toppen 35°. Verifiera måtten med sinussatsen.</li>
+          </ol>
+        </div>
+        
+        <div class="facit">
+          <button class="facit-toggle" onclick="this.nextElementSibling.classList.toggle('visible'); this.textContent = this.nextElementSibling.classList.contains('visible') ? '👁 Dölj facit' : '👁 Visa facit'">👁 Visa facit</button>
+          <div class="facit-content">
+            <div class="facit-item"><strong>1.</strong> $b = \frac{8 \sin 60°}{\sin 40°} \approx 10{,}8$ cm</div>
+            <div class="facit-item"><strong>2.</strong> $a = \frac{12 \sin 50°}{\sin 70°} \approx 9{,}8$ cm</div>
+            <div class="facit-item"><strong>3.</strong> $c = \frac{6}{\sin 30°} = 12$ cm</div>
+            <div class="facit-item"><strong>4.</strong> $b = \frac{10 \sin 90°}{\sin 45°} = 10\sqrt{2} \approx 14{,}1$ m</div>
+            <div class="facit-item"><strong>5.</strong> $b = 7$ cm (likbent triangel)</div>
+            <div class="facit-item"><strong>6.</strong> $\sin C = \frac{20 \sin 35°}{15} \approx 0{,}765 \Rightarrow C \approx 49{,}9°$ eller $C \approx 130{,}1°$</div>
+            <div class="facit-item"><strong>7.</strong> $\sin B = \frac{12 \sin 30°}{8} = 0{,}75 \Rightarrow B \approx 48{,}6°$ eller $B \approx 131{,}4°$</div>
+            <div class="facit-item"><strong>8.</strong> $C = 60°$. $a = \frac{15 \sin 72°}{\sin 60°} \approx 16{,}5$ cm, $b = \frac{15 \sin 48°}{\sin 60°} \approx 12{,}9$ cm</div>
+            <div class="facit-item"><strong>9.</strong> Cirka 245 km totalt (geometriproblem)</div>
+            <div class="facit-item"><strong>10.</strong> $\sin B = \frac{9 \sin 25°}{6} \approx 0{,}634 \Rightarrow B \approx 39{,}4°$ eller $B \approx 140{,}6°$</div>
+            <div class="facit-item"><strong>11.</strong> $C = 75°$. Omkrets $= 10(\sin 60° + \sin 45° + \sin 75°) \approx 23{,}4$</div>
+            <div class="facit-item"><strong>12.</strong> Från sinussatsen: $a = k\sin A$, $b = k\sin B$, $c = k\sin C$ ✓</div>
+            <div class="facit-item"><strong>13.</strong> $C = 90°$ (Pythagoras)</div>
+            <div class="facit-item"><strong>14.</strong> Ca 33 km</div>
+            <div class="facit-item"><strong>15.</strong> $A \approx 33{,}6°$, $B \approx 67{,}2°$</div>
+            <div class="facit-item"><strong>16.</strong> $O = 2nR\sin\frac{180°}{n}$</div>
+            <div class="facit-item"><strong>17.</strong> Verifiering via triangelkonstruktion</div>
+          </div>
+        </div>
+      </section>
+      
+      <nav class="lesson-nav">
+        <a href="04-areasatsen.html" class="nav-btn">← Föregående</a>
+        <a href="06-cosinussatsen.html" class="nav-btn">Nästa →</a>
+      </nav>
+    </article>
+  </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      renderMathInElement(document.body, {
+        delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}],
+        throwOnError: false
+      });
+    });
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    }
+    function toggleFocus() {
+      document.body.classList.toggle('focus-mode');
+      localStorage.setItem('focusMode', document.body.classList.contains('focus-mode') ? 'on' : 'off');
+    }
+    if (localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+    if (localStorage.getItem('focusMode') === 'on') document.body.classList.add('focus-mode');
+    function toggleFont() {
+      document.body.classList.toggle('dyslexia-font');
+      localStorage.setItem('dyslexiaFont', document.body.classList.contains('dyslexia-font') ? 'on' : 'off');
+    }
+    if (localStorage.getItem('dyslexiaFont') === 'on') document.body.classList.add('dyslexia-font');
+    window.addEventListener('scroll', function() {
+      if (document.body.classList.contains('focus-mode')) {
+        const scrolled = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+      }
+    });
+  </script>
+</body>
+</html>

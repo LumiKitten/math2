@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trigonometri - Komplett Lektionsmaterial</title>
+  <meta name="description" content="Interaktivt lektionsmaterial för trigonometri - Matematik 5000 3C och 4. Speciella vinklar, enhetscirkeln, triangelsatser, och mer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="homepage">
+  <!-- Progress Bar (Focus Mode) -->
+  <div class="progress-bar" id="progressBar"></div>
+  
+  <!-- Settings Panel -->
+  <div class="settings-panel">
+    <button class="settings-btn theme-toggle" onclick="toggleTheme()" title="Byt tema (ljust/mörkt)">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+    <button class="settings-btn focus-toggle" onclick="toggleFocus()" title="Enhanced Focus - ökad läsbarhet">
+      <span class="icon-focus">🎯</span>
+      <span class="icon-focus-off">✨</span>
+    </button>
+    <button class="settings-btn font-toggle" onclick="toggleFont()" title="OpenDyslexic typsnitt">
+      <span class="icon-font">Aa</span>
+      <span class="icon-font-off">Dy</span>
+    </button>
+  </div>
+
+  <header class="hero">
+    <h1>📐 Trigonometri</h1>
+    <p class="subtitle">Komplett lektionsmaterial för Matematik 5000 3C & 4</p>
+  </header>
+  
+  <main class="home-content">
+    <section class="course-section">
+      <h2 class="course-title">Delkurs 1 – Grunderna</h2>
+      <p class="course-desc">Speciella vinklar, enhetscirkeln, triangelsatser</p>
+      <div class="lesson-grid">
+        <a href="lessons/01-speciella-vinklar.html" class="lesson-card">
+          <span class="card-number">1</span>
+          <span class="card-title">Speciella Vinklar</span>
+        </a>
+        <a href="lessons/02-enhetscirkeln.html" class="lesson-card">
+          <span class="card-number">2</span>
+          <span class="card-title">Enhetscirkeln</span>
+        </a>
+        <a href="lessons/03-trigonometriska-ekvationer.html" class="lesson-card">
+          <span class="card-number">3</span>
+          <span class="card-title">Trig. Ekvationer</span>
+        </a>
+        <a href="lessons/04-areasatsen.html" class="lesson-card">
+          <span class="card-number">4</span>
+          <span class="card-title">Areasatsen</span>
+        </a>
+        <a href="lessons/05-sinussatsen.html" class="lesson-card">
+          <span class="card-number">5</span>
+          <span class="card-title">Sinussatsen</span>
+        </a>
+        <a href="lessons/06-cosinussatsen.html" class="lesson-card">
+          <span class="card-number">6</span>
+          <span class="card-title">Cosinussatsen</span>
+        </a>
+        <a href="lessons/07-problemlosning.html" class="lesson-card">
+          <span class="card-number">7</span>
+          <span class="card-title">Problemlösning</span>
+        </a>
+      </div>
+    </section>
+    
+    <section class="course-section">
+      <h2 class="course-title">Delkurs 2 – Fördjupning</h2>
+      <p class="course-desc">Identiteter, formler, funktioner, modeller</p>
+      <div class="lesson-grid">
+        <a href="lessons/08-repetition.html" class="lesson-card">
+          <span class="card-number">8</span>
+          <span class="card-title">Repetition</span>
+        </a>
+        <a href="lessons/09-enhetscirkeln-fordjupning.html" class="lesson-card">
+          <span class="card-number">9</span>
+          <span class="card-title">Enhetscirkeln+</span>
+        </a>
+        <a href="lessons/10-ekvationer-fordjupning.html" class="lesson-card">
+          <span class="card-number">10</span>
+          <span class="card-title">Ekvationer+</span>
+        </a>
+        <a href="lessons/11-symmetrier.html" class="lesson-card">
+          <span class="card-number">11</span>
+          <span class="card-title">Symmetrier</span>
+        </a>
+        <a href="lessons/12-trigonometriska-ettan.html" class="lesson-card">
+          <span class="card-number">12</span>
+          <span class="card-title">Trig. Ettan</span>
+        </a>
+        <a href="lessons/13-additionsformler.html" class="lesson-card">
+          <span class="card-number">13</span>
+          <span class="card-title">Additionsformler</span>
+        </a>
+        <a href="lessons/14-dubbla-vinkeln.html" class="lesson-card">
+          <span class="card-number">14</span>
+          <span class="card-title">Dubbla Vinkeln</span>
+        </a>
+        <a href="lessons/15-ekvationer-formler.html" class="lesson-card">
+          <span class="card-number">15</span>
+          <span class="card-title">Ekv. & Formler</span>
+        </a>
+        <a href="lessons/16-sincos-funktioner.html" class="lesson-card">
+          <span class="card-number">16</span>
+          <span class="card-title">Sin/Cos-funktioner</span>
+        </a>
+        <a href="lessons/17-digitala-verktyg.html" class="lesson-card">
+          <span class="card-number">17</span>
+          <span class="card-title">Digitala Verktyg</span>
+        </a>
+        <a href="lessons/18-forskjutna-kurvor.html" class="lesson-card">
+          <span class="card-number">18</span>
+          <span class="card-title">Förskjutna Kurvor</span>
+        </a>
+        <a href="lessons/19-asinx-bcosx.html" class="lesson-card">
+          <span class="card-number">19</span>
+          <span class="card-title">a·sin + b·cos</span>
+        </a>
+        <a href="lessons/20-tangensfunktionen.html" class="lesson-card">
+          <span class="card-number">20</span>
+          <span class="card-title">Tangensfunktionen</span>
+        </a>
+        <a href="lessons/21-radianer.html" class="lesson-card">
+          <span class="card-number">21</span>
+          <span class="card-title">Radianer</span>
+        </a>
+        <a href="lessons/22-modeller.html" class="lesson-card">
+          <span class="card-number">22</span>
+          <span class="card-title">Trig. Modeller</span>
+        </a>
+      </div>
+    </section>
+    
+    <section class="course-section reference-section">
+      <h2 class="course-title">📋 Referens</h2>
+      <div class="lesson-grid">
+        <a href="lessons/23-formelblad.html" class="lesson-card formula-card">
+          <span class="card-number">📋</span>
+          <span class="card-title">Formelblad</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="home-footer">
+    <p>Baserat på Matematik 5000 3C (Kap 4) & Matematik 5000+ 4 (Kap 1)</p>
+  </footer>
+
+  <script>
+    // Theme toggle with localStorage persistence
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    }
+    
+    // Focus mode toggle
+    function toggleFocus() {
+      document.body.classList.toggle('focus-mode');
+      localStorage.setItem('focusMode', document.body.classList.contains('focus-mode') ? 'on' : 'off');
+    }
+    
+    // Font toggle (OpenDyslexic)
+    function toggleFont() {
+      document.body.classList.toggle('dyslexia-font');
+      localStorage.setItem('dyslexiaFont', document.body.classList.contains('dyslexia-font') ? 'on' : 'off');
+    }
+    
+    // Apply saved preferences on load
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+    if (localStorage.getItem('focusMode') === 'on') {
+      document.body.classList.add('focus-mode');
+    }
+    if (localStorage.getItem('dyslexiaFont') === 'on') {
+      document.body.classList.add('dyslexia-font');
+    }
+    
+    // Progress bar for focus mode
+    window.addEventListener('scroll', function() {
+      if (document.body.classList.contains('focus-mode')) {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+      }
+    });
+  </script>
+</body>
+</html>

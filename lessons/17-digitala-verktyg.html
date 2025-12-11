@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion 17: Digitala Verktyg - Trigonometri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <div class="settings-panel">
+    <button class="settings-btn theme-toggle" onclick="toggleTheme()" title="Byt tema">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+    <button class="settings-btn focus-toggle" onclick="toggleFocus()" title="Enhanced Focus">
+      <span class="icon-focus">🎯</span>
+      <span class="icon-focus-off">✨</span>
+    </button>
+    <button class="settings-btn font-toggle" onclick="toggleFont()" title="OpenDyslexic typsnitt">
+      <span class="icon-font">Aa</span>
+      <span class="icon-font-off">Dy</span>
+    </button>
+  </div>
+  <a href="../index.html" class="back-link">← Tillbaka till översikt</a>
+  
+  <main class="lesson-page">
+    <article class="lesson active">
+      <header class="lesson-header">
+        <span class="lesson-badge">Lektion 17</span>
+        <h1 class="lesson-title">Digitala Verktyg för Trig. Ekvationer</h1>
+      </header>
+      
+      <section class="section">
+        <h2 class="section-title">Grafisk Lösning</h2>
+        <ol>
+          <li>Rita $y = \text{vänsterled}$ och $y = \text{högerled}$</li>
+          <li>Skärningspunkterna ger lösningarna</li>
+        </ol>
+        
+        <div class="graph-container">
+          <iframe src="https://www.desmos.com/calculator/kzqyqpqcfg?embed" frameborder="0"></iframe>
+          <div class="graph-caption">Exempel: Lös $\sin x = 0.5$ grafiskt</div>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Numerisk Lösning</h2>
+        <div class="info-box tip">
+          <div class="info-box-title">💡 I GeoGebra CAS</div>
+          <p>Använd <code>Solve()</code> eller <code>NSolve()</code></p>
+        </div>
+      </section>
+      
+      <nav class="lesson-nav">
+        <a href="16-sincos-funktioner.html" class="nav-btn">← Föregående</a>
+        <a href="18-forskjutna-kurvor.html" class="nav-btn">Nästa →</a>
+      </nav>
+    </article>
+  </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      renderMathInElement(document.body, {
+        delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}],
+        throwOnError: false
+      });
+    });
+  </script>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    }
+    function toggleFocus() {
+      document.body.classList.toggle('focus-mode');
+      localStorage.setItem('focusMode', document.body.classList.contains('focus-mode') ? 'on' : 'off');
+    }
+    if (localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+    if (localStorage.getItem('focusMode') === 'on') document.body.classList.add('focus-mode');
+    window.addEventListener('scroll', function() {
+      if (document.body.classList.contains('focus-mode')) {
+        var s = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100;
+        document.getElementById('progressBar').style.width = s + '%';
+      }
+    });
+  </script>
+</body>
+</html>

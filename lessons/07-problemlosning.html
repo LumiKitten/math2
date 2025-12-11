@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion 7: Problemlösning - Trigonometri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <div class="settings-panel">
+    <button class="settings-btn theme-toggle" onclick="toggleTheme()" title="Byt tema">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+    <button class="settings-btn focus-toggle" onclick="toggleFocus()" title="Enhanced Focus">
+      <span class="icon-focus">🎯</span>
+      <span class="icon-focus-off">✨</span>
+    </button>
+    <button class="settings-btn font-toggle" onclick="toggleFont()" title="OpenDyslexic typsnitt">
+      <span class="icon-font">Aa</span>
+      <span class="icon-font-off">Dy</span>
+    </button>
+  </div>
+  <a href="../index.html" class="back-link">← Tillbaka till översikt</a>
+  
+  <main class="lesson-page">
+    <article class="lesson active">
+      <header class="lesson-header">
+        <span class="lesson-badge">Lektion 7</span>
+        <h1 class="lesson-title">Problemlösning och Repetition</h1>
+      </header>
+      
+      <div class="learning-goals">
+        <h3>📚 Lärandemål</h3>
+        <ul>
+          <li>Välja rätt sats för olika problemtyper</li>
+          <li>Kombinera flera satser i samma problem</li>
+          <li>Lösa tillämpade problem</li>
+        </ul>
+      </div>
+      
+      <section class="section">
+        <h2 class="section-title">Strategiguide</h2>
+        
+        <div class="info-box important">
+          <div class="info-box-title">🎯 Vilken sats ska jag använda?</div>
+          <ul>
+            <li><strong>Rätvinklig triangel</strong> → SOH-CAH-TOA</li>
+            <li><strong>Sida + motstående vinkel känd</strong> → SINUSSATSEN</li>
+            <li><strong>Två sidor + mellanvinkel (SAS)</strong> → COSINUSSATSEN</li>
+            <li><strong>Tre sidor (SSS)</strong> → COSINUSSATSEN</li>
+            <li><strong>Area behövs</strong> → AREASATSEN</li>
+          </ul>
+        </div>
+        
+        <h3 class="subsection-title">Problemlösningsmetod</h3>
+        <ol>
+          <li><strong>Rita figur</strong> med alla kända värden</li>
+          <li><strong>Identifiera</strong> vilka satser som kan användas</li>
+          <li><strong>Välj</strong> den enklaste vägen till lösning</li>
+          <li><strong>Beräkna</strong> steg för steg</li>
+          <li><strong>Kontrollera</strong> att svaret är rimligt</li>
+        </ol>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Genomgångna Exempel</h2>
+        
+        <div class="example">
+          <div class="example-header">Exempel - Tornhöjd</div>
+          <div class="example-content">
+            <div class="example-problem">Från en punkt P ser man toppen av ett torn under vinkeln 40°. Man går 50 m närmare tornet och ser nu toppen under vinkeln 60°. Hur högt är tornet?</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$\text{Låt } h = \text{tornets höjd, } x = \text{avstånd från andra punkten}$$
+$$\text{Från första punkten: } \tan 40° = \frac{h}{x + 50}$$
+$$\text{Från andra punkten: } \tan 60° = \frac{h}{x}$$
+$$\text{Från ekv. 2: } h = x \cdot \tan 60° = x\sqrt{3}$$
+$$\text{Sätt in: } 0{,}839(x + 50) = x\sqrt{3}$$
+$$0{,}839x + 41{,}95 = 1{,}732x$$
+$$x \approx 47 \text{ m}$$
+$$h = 47 \cdot \sqrt{3} \approx 81 \text{ m}$$
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Sammanfattning Delkurs 1</h2>
+        
+        <div class="table-container">
+          <table>
+            <tr><th>Sats</th><th>Formel</th><th>Användning</th></tr>
+            <tr><td>Trig. funktioner</td><td>sin, cos, tan</td><td>Rätvinkliga trianglar</td></tr>
+            <tr><td>Areasatsen</td><td>$A = \frac{1}{2}ab\sin C$</td><td>Area i godtycklig triangel</td></tr>
+            <tr><td>Sinussatsen</td><td>$\frac{a}{\sin A} = \frac{b}{\sin B}$</td><td>ASA, AAS, SSA</td></tr>
+            <tr><td>Cosinussatsen</td><td>$c^2 = a^2 + b^2 - 2ab\cos C$</td><td>SAS, SSS</td></tr>
+          </table>
+        </div>
+      </section>
+      
+      <section class="exercises">
+        <h2 class="exercises-title">📝 Blandade Övningar</h2>
+        <ol class="exercise-list">
+          <li data-num="1">En parallellograms sidor är 4 cm och 7 cm. Diagonalerna är 8 cm och 6 cm. Bestäm vinklarna.</li>
+          <li data-num="2">Två fartyg lämnar samma hamn. Det ena seglar 30 km i riktning N 40° O, det andra 40 km i riktning S 20° O. Hur långt är det mellan fartygen?</li>
+          <li data-num="3">En triangel har omkrets 24 cm. Sidorna förhåller sig som 3:4:5. Beräkna triangelns area.</li>
+          <li data-num="4">Från en balkong 15 m över marken ser man fotändan av ett träd under depressionsvinkeln 20° och trädtoppen under elevationsvinkeln 35°. Hur högt är trädet?</li>
+        </ol>
+        <div class="facit">
+          <button class="facit-toggle" onclick="this.nextElementSibling.classList.toggle('visible'); this.textContent = this.nextElementSibling.classList.contains('visible') ? '👁 Dölj facit' : '👁 Visa facit'">👁 Visa facit</button>
+          <div class="facit-content">
+            <div class="facit-item"><strong>1.</strong> Dela i trianglar, använd cosinussatsen: ~75,5° och 104,5°</div>
+            <div class="facit-item"><strong>2.</strong> Vinkeln mellan kurserna = 60°, cosinussatsen: ≈ 36,1 km</div>
+            <div class="facit-item"><strong>3.</strong> Sidorna: 6, 8, 10 cm. Rätvinklig! Area = 24 cm²</div>
+            <div class="facit-item"><strong>4.</strong> Avstånd ≈ 41,2 m, höjd ovanför balkong ≈ 28,9 m. Total ≈ 44 m</div>
+          </div>
+        </div>
+      </section>
+      
+      <nav class="lesson-nav">
+        <a href="06-cosinussatsen.html" class="nav-btn">← Föregående</a>
+        <a href="08-repetition.html" class="nav-btn">Nästa (Delkurs 2) →</a>
+      </nav>
+    </article>
+  </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      renderMathInElement(document.body, {
+        delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}],
+        throwOnError: false
+      });
+    });
+  </script>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    }
+    function toggleFocus() {
+      document.body.classList.toggle('focus-mode');
+      localStorage.setItem('focusMode', document.body.classList.contains('focus-mode') ? 'on' : 'off');
+    }
+    if (localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+    if (localStorage.getItem('focusMode') === 'on') document.body.classList.add('focus-mode');
+    window.addEventListener('scroll', function() {
+      if (document.body.classList.contains('focus-mode')) {
+        var s = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100;
+        document.getElementById('progressBar').style.width = s + '%';
+      }
+    });
+  </script>
+</body>
+</html>

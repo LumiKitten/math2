@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion 3: Trigonometriska Ekvationer - Trigonometri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <!-- Progress Bar (Focus Mode) -->
+  <div class="progress-bar" id="progressBar"></div>
+  
+  <!-- Settings Panel -->
+  <div class="settings-panel">
+    <button class="settings-btn theme-toggle" onclick="toggleTheme()" title="Byt tema">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+    <button class="settings-btn focus-toggle" onclick="toggleFocus()" title="Enhanced Focus">
+      <span class="icon-focus">🎯</span>
+      <span class="icon-focus-off">✨</span>
+    </button>
+  </div>
+
+  <a href="../index.html" class="back-link">← Tillbaka till översikt</a>
+  
+  <main class="lesson-page">
+    <article class="lesson">
+      <header class="lesson-header">
+        <span class="lesson-badge">Lektion 3</span>
+        <h1 class="lesson-title">Trigonometriska Ekvationer</h1>
+      </header>
+      
+      <div class="learning-goals">
+        <h3>📚 Lärandemål</h3>
+        <ul>
+          <li>Lösa enkla ekvationer av typen $\sin v = a$ och $\cos v = a$</li>
+          <li>Hitta alla lösningar i ett givet intervall</li>
+          <li>Tolka lösningar grafiskt och med enhetscirkeln</li>
+        </ul>
+      </div>
+      
+      <section class="section">
+        <h2 class="section-title">Metod för Sinusekvationer</h2>
+        
+        <div class="formula-box">
+          <div class="formula-label">Allmän lösning: $\sin v = a$</div>
+          $$v = v_0 + n \cdot 360° \quad \text{eller} \quad v = (180° - v_0) + n \cdot 360°$$
+          <p style="margin-top: 0.5rem; font-size: 0.9rem;">där $v_0 = \arcsin(a)$ och $n \in \mathbb{Z}$</p>
+        </div>
+        
+        <div class="example">
+          <div class="example-header">Exempel</div>
+          <div class="example-content">
+            <div class="example-problem">Lös $\sin v = \frac{1}{2}$ för $v \in [0°, 360°]$</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$\sin v = \frac{1}{2}$$
+$$v_0 = 30° \text{ (speciell vinkel)}$$
+$$v = 30° \quad \text{eller} \quad v = 180° - 30° = 150°$$
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Metod för Cosinusekvationer</h2>
+        
+        <div class="formula-box">
+          <div class="formula-label">Allmän lösning: $\cos v = a$</div>
+          $$v = \pm v_0 + n \cdot 360°$$
+          <p style="margin-top: 0.5rem; font-size: 0.9rem;">där $v_0 = \arccos(a)$ och $n \in \mathbb{Z}$</p>
+        </div>
+        
+        <div class="example">
+          <div class="example-header">Exempel</div>
+          <div class="example-content">
+            <div class="example-problem">Lös $\cos v = -\frac{\sqrt{2}}{2}$ för $v \in [0°, 360°]$</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$\cos v = -\frac{\sqrt{2}}{2}$$
+$$v_0 = 45° \text{ (referensvinkel, där } \cos 45° = \frac{\sqrt{2}}{2}\text{)}$$
+$$\text{Negativ cosinus: Kvadrant II eller III}$$
+$$v = 180° - 45° = 135° \quad \text{eller} \quad v = 180° + 45° = 225°$$
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="exercises">
+        <h2 class="exercises-title">📝 Övningar</h2>
+        
+        <div class="exercise-level">
+          <span class="level-badge">Nivå E - Grundläggande</span>
+          <ol class="exercise-list">
+            <li data-num="1">Lös $\sin v = 0$ för $v \in [0°, 360°]$</li>
+            <li data-num="2">Lös $\cos v = 1$ för $v \in [0°, 360°]$</li>
+            <li data-num="3">Lös $\sin v = 1$ för $v \in [0°, 360°]$</li>
+            <li data-num="4">Lös $\cos v = 0$ för $v \in [0°, 360°]$</li>
+            <li data-num="5">Lös $\sin v = -1$ för $v \in [0°, 360°]$</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge advanced">Nivå C - Tillämpning</span>
+          <ol class="exercise-list">
+            <li data-num="6">Lös $\sin v = \frac{\sqrt{3}}{2}$ för $v \in [0°, 360°]$</li>
+            <li data-num="7">Lös $\cos v = -\frac{1}{2}$ för $v \in [0°, 360°]$</li>
+            <li data-num="8">Lös $\sin v = -\frac{\sqrt{2}}{2}$ för $v \in [0°, 360°]$</li>
+            <li data-num="9">Lös $\cos v = \frac{\sqrt{3}}{2}$ för $v \in [0°, 360°]$</li>
+            <li data-num="10">Lös $2\sin v - 1 = 0$ för $v \in [0°, 360°]$</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge expert">Nivå A - Avancerat</span>
+          <ol class="exercise-list">
+            <li data-num="11">Lös $2\cos v + \sqrt{3} = 0$ för $v \in [0°, 360°]$</li>
+            <li data-num="12">Lös $\sin v = \cos v$ för $v \in [0°, 360°]$</li>
+            <li data-num="13">Lös $\sin^2 v = \frac{1}{4}$ för $v \in [0°, 360°]$</li>
+            <li data-num="14">Lös $2\cos^2 v - 1 = 0$ för $v \in [0°, 360°]$</li>
+            <li data-num="15">Lös $\sin v = \frac{2}{3}$ för $v \in [0°, 360°]$ (avrundat)</li>
+            <li data-num="16">Hur många lösningar har $\sin v = 0{,}7$ i intervallet $[0°, 720°]$?</li>
+            <li data-num="17">Lös $|\cos v| = \frac{1}{2}$ för $v \in [0°, 360°]$</li>
+          </ol>
+        </div>
+        
+        <div class="facit">
+          <button class="facit-toggle" onclick="this.nextElementSibling.classList.toggle('visible'); this.textContent = this.nextElementSibling.classList.contains('visible') ? '👁 Dölj facit' : '👁 Visa facit'">👁 Visa facit</button>
+          <div class="facit-content">
+            <div class="facit-item"><strong>1.</strong> $v = 0°, 180°, 360°$</div>
+            <div class="facit-item"><strong>2.</strong> $v = 0°, 360°$</div>
+            <div class="facit-item"><strong>3.</strong> $v = 90°$</div>
+            <div class="facit-item"><strong>4.</strong> $v = 90°, 270°$</div>
+            <div class="facit-item"><strong>5.</strong> $v = 270°$</div>
+            <div class="facit-item"><strong>6.</strong> $v = 60°, 120°$</div>
+            <div class="facit-item"><strong>7.</strong> $v = 120°, 240°$</div>
+            <div class="facit-item"><strong>8.</strong> $v = 225°, 315°$</div>
+            <div class="facit-item"><strong>9.</strong> $v = 30°, 330°$</div>
+            <div class="facit-item"><strong>10.</strong> $\sin v = \frac{1}{2} \Rightarrow v = 30°, 150°$</div>
+            <div class="facit-item"><strong>11.</strong> $\cos v = -\frac{\sqrt{3}}{2} \Rightarrow v = 150°, 210°$</div>
+            <div class="facit-item"><strong>12.</strong> $\tan v = 1 \Rightarrow v = 45°, 225°$</div>
+            <div class="facit-item"><strong>13.</strong> $\sin v = \pm\frac{1}{2} \Rightarrow v = 30°, 150°, 210°, 330°$</div>
+            <div class="facit-item"><strong>14.</strong> $\cos^2 v = \frac{1}{2} \Rightarrow \cos v = \pm\frac{\sqrt{2}}{2} \Rightarrow v = 45°, 135°, 225°, 315°$</div>
+            <div class="facit-item"><strong>15.</strong> $v \approx 41{,}8°$ eller $v \approx 138{,}2°$</div>
+            <div class="facit-item"><strong>16.</strong> 4 lösningar (2 per period)</div>
+            <div class="facit-item"><strong>17.</strong> $\cos v = \pm\frac{1}{2} \Rightarrow v = 60°, 120°, 240°, 300°$</div>
+          </div>
+        </div>
+      </section>
+      
+      <nav class="lesson-nav">
+        <a href="02-enhetscirkeln.html" class="nav-btn">← Föregående</a>
+        <a href="04-areasatsen.html" class="nav-btn">Nästa →</a>
+      </nav>
+    </article>
+  </main>
+  
+  <script>
+    // KaTeX rendering
+    document.addEventListener('DOMContentLoaded', function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+        ],
+        throwOnError: false
+      });
+    });
+    
+    // Theme toggle
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    }
+    
+    // Focus mode toggle
+    function toggleFocus() {
+      document.body.classList.toggle('focus-mode');
+      localStorage.setItem('focusMode', document.body.classList.contains('focus-mode') ? 'on' : 'off');
+    }
+    
+    // Apply saved preferences
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+    if (localStorage.getItem('focusMode') === 'on') {
+      document.body.classList.add('focus-mode');
+    }
+    
+    // Progress bar
+    window.addEventListener('scroll', function() {
+      if (document.body.classList.contains('focus-mode')) {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+      }
+    });
+  </script>
+</body>
+</html>

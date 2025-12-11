@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion 20: Tangensfunktionen - Trigonometri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <div class="settings-panel">
+    <button class="settings-btn theme-toggle" onclick="toggleTheme()" title="Byt tema">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+    <button class="settings-btn focus-toggle" onclick="toggleFocus()" title="Enhanced Focus">
+      <span class="icon-focus">🎯</span>
+      <span class="icon-focus-off">✨</span>
+    </button>
+  </div>
+
+  <a href="../index.html" class="back-link">← Tillbaka till översikt</a>
+  
+  <main class="lesson-page">
+    <article class="lesson">
+      <header class="lesson-header">
+        <span class="lesson-badge">Lektion 20</span>
+        <h1 class="lesson-title">Tangensfunktionen</h1>
+      </header>
+      
+      <div class="learning-goals">
+        <h3>📚 Lärandemål</h3>
+        <ul>
+          <li>Förstå definitionen av tangens via enhetscirkeln</li>
+          <li>Skissa grafen för $y = \tan x$ och identifiera dess egenskaper</li>
+          <li>Lösa tangentekvationer</li>
+        </ul>
+      </div>
+      
+      <section class="section">
+        <h2 class="section-title">Definition och Egenskaper</h2>
+        
+        <div class="formula-box">
+          <div class="formula-label">Definition</div>
+          $$\tan v = \frac{\sin v}{\cos v}$$
+        </div>
+        
+        <div class="table-container">
+          <table>
+            <tr><th>Egenskap</th><th>Värde</th></tr>
+            <tr><td>Period</td><td>$180°$ (eller $\pi$)</td></tr>
+            <tr><td>Definitionsmängd</td><td>Alla $x \neq 90° + n \cdot 180°$</td></tr>
+            <tr><td>Värdemängd</td><td>Alla reella tal</td></tr>
+            <tr><td>Asymptoter</td><td>$x = 90°, 270°, ...$</td></tr>
+          </table>
+        </div>
+        
+        <div class="info-box warning">
+          <div class="info-box-title">⚠️ Viktigt</div>
+          <p>Tangensfunktionen är odefinierad när $\cos x = 0$, dvs vid $x = 90° + n \cdot 180°$.</p>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Interaktiv Graf</h2>
+        <p>Observera tangensgrafens asymptotiska beteende och periodicitet:</p>
+        
+        <div class="graph-container">
+          <div id="tanGraph" class="desmos-graph"></div>
+          <div class="graph-caption">$y = \tan(x)$ — Notera de vertikala asymptoterna vid $90°$, $270°$ etc.</div>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Lösa Tangentekvationer</h2>
+        
+        <div class="formula-box">
+          <div class="formula-label">Allmän lösning: $\tan v = a$</div>
+          $$v = \arctan(a) + n \cdot 180°$$
+        </div>
+        
+        <div class="example">
+          <div class="example-header">Exempel</div>
+          <div class="example-content">
+            <div class="example-problem">Lös $\tan x = 1$ för $x \in [0°, 360°]$</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$\tan x = 1$$
+$$x = \arctan(1) = 45°$$
+$$\text{Alla lösningar: } x = 45° + n \cdot 180°$$
+$$\text{I } [0°, 360°]: x = 45° \text{ eller } x = 225°$$
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="exercises">
+        <h2 class="exercises-title">📝 Övningar</h2>
+        
+        <div class="exercise-level">
+          <span class="level-badge">Nivå E - Grundläggande</span>
+          <ol class="exercise-list">
+            <li data-num="1">Beräkna $\tan 45°$</li>
+            <li data-num="2">Beräkna $\tan 0°$</li>
+            <li data-num="3">Vilken period har tangensfunktionen?</li>
+            <li data-num="4">Lös $\tan x = 0$ för $x \in [0°, 360°]$</li>
+            <li data-num="5">Vid vilka vinklar är $\tan x$ odefinierad i $[0°, 360°]$?</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge advanced">Nivå C - Tillämpning</span>
+          <ol class="exercise-list">
+            <li data-num="6">Lös $\tan x = \sqrt{3}$ för $x \in [0°, 360°]$</li>
+            <li data-num="7">Lös $\tan x = -1$ för $x \in [0°, 360°]$</li>
+            <li data-num="8">Beräkna $\tan 60°$ exakt</li>
+            <li data-num="9">Lös $\tan x = \frac{\sqrt{3}}{3}$ för $x \in [0°, 360°]$</li>
+            <li data-num="10">Om $\sin x = 0{,}6$ och $\cos x = 0{,}8$, beräkna $\tan x$</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge expert">Nivå A - Avancerat</span>
+          <ol class="exercise-list">
+            <li data-num="11">Visa att $\tan(180° - x) = -\tan x$</li>
+            <li data-num="12">Lös $\tan^2 x = 3$ för $x \in [0°, 360°]$</li>
+            <li data-num="13">Förenkla $\frac{\tan x}{\sin x}$</li>
+            <li data-num="14">Om $\tan x = 2$, beräkna $\tan(x + 180°)$</li>
+            <li data-num="15">Visa att $1 + \tan^2 x = \frac{1}{\cos^2 x}$</li>
+            <li data-num="16">Lös $2\tan x - 3 = 0$ för $x \in [0°, 360°]$</li>
+            <li data-num="17">Bestäm antalet lösningar till $\tan x = x$ (i grader) för $x \in [0°, 360°]$ genom att rita graferna.</li>
+          </ol>
+        </div>
+        
+        <div class="facit">
+          <button class="facit-toggle" onclick="this.nextElementSibling.classList.toggle('visible'); this.textContent = this.nextElementSibling.classList.contains('visible') ? '👁 Dölj facit' : '👁 Visa facit'">👁 Visa facit</button>
+          <div class="facit-content">
+            <div class="facit-item"><strong>1.</strong> $\tan 45° = 1$</div>
+            <div class="facit-item"><strong>2.</strong> $\tan 0° = 0$</div>
+            <div class="facit-item"><strong>3.</strong> 180°</div>
+            <div class="facit-item"><strong>4.</strong> $x = 0°, 180°, 360°$</div>
+            <div class="facit-item"><strong>5.</strong> $x = 90°$ och $x = 270°$</div>
+            <div class="facit-item"><strong>6.</strong> $x = 60°, 240°$</div>
+            <div class="facit-item"><strong>7.</strong> $x = 135°, 315°$</div>
+            <div class="facit-item"><strong>8.</strong> $\tan 60° = \sqrt{3}$</div>
+            <div class="facit-item"><strong>9.</strong> $x = 30°, 210°$</div>
+            <div class="facit-item"><strong>10.</strong> $\tan x = \frac{0{,}6}{0{,}8} = 0{,}75$</div>
+            <div class="facit-item"><strong>11.</strong> $\tan(180° - x) = \frac{\sin(180°-x)}{\cos(180°-x)} = \frac{\sin x}{-\cos x} = -\tan x$ ✓</div>
+            <div class="facit-item"><strong>12.</strong> $\tan x = \pm\sqrt{3} \Rightarrow x = 60°, 120°, 240°, 300°$</div>
+            <div class="facit-item"><strong>13.</strong> $= \frac{\sin x/\cos x}{\sin x} = \frac{1}{\cos x} = \sec x$</div>
+            <div class="facit-item"><strong>14.</strong> $\tan(x + 180°) = \tan x = 2$ (period 180°)</div>
+            <div class="facit-item"><strong>15.</strong> $1 + \frac{\sin^2 x}{\cos^2 x} = \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x}$ ✓</div>
+            <div class="facit-item"><strong>16.</strong> $\tan x = 1{,}5 \Rightarrow x \approx 56{,}3°, 236{,}3°$</div>
+            <div class="facit-item"><strong>17.</strong> 2 eller 3 lösningar (beroende på tolkning)</div>
+          </div>
+        </div>
+      </section>
+      
+      <nav class="lesson-nav">
+        <a href="19-asinx-bcosx.html" class="nav-btn">← Föregående</a>
+        <a href="21-radianer.html" class="nav-btn">Nästa →</a>
+      </nav>
+    </article>
+  </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      renderMathInElement(document.body, {
+        delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}],
+        throwOnError: false
+      });
+      
+      // Desmos tangent graph
+      var elt = document.getElementById('tanGraph');
+      if (elt) {
+        var calc = Desmos.GraphingCalculator(elt, {
+          expressions: true,
+          settingsMenu: false,
+          zoomButtons: true,
+          expressionsCollapsed: true,
+          degreeMode: true
+        });
+        
+        calc.setMathBounds({left: -30, right: 390, bottom: -5, top: 5});
+        
+        // Tangent function
+        calc.setExpression({id: 'tan', latex: 'y=\\tan(x)', color: '#7B5EBD', lineWidth: 3});
+        
+        // Asymptotes
+        calc.setExpression({id: 'asy1', latex: 'x=90', color: '#FF7B54', lineWidth: 1, lineStyle: Desmos.Styles.DASHED});
+        calc.setExpression({id: 'asy2', latex: 'x=270', color: '#FF7B54', lineWidth: 1, lineStyle: Desmos.Styles.DASHED});
+        
+        // X-axis
+        calc.setExpression({id: 'xaxis', latex: 'y=0', color: '#888', lineWidth: 1});
+      }
+    });
+    
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    }
+    function toggleFocus() {
+      document.body.classList.toggle('focus-mode');
+      localStorage.setItem('focusMode', document.body.classList.contains('focus-mode') ? 'on' : 'off');
+    }
+    if (localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+    if (localStorage.getItem('focusMode') === 'on') document.body.classList.add('focus-mode');
+    function toggleFont() {
+      document.body.classList.toggle('dyslexia-font');
+      localStorage.setItem('dyslexiaFont', document.body.classList.contains('dyslexia-font') ? 'on' : 'off');
+    }
+    if (localStorage.getItem('dyslexiaFont') === 'on') document.body.classList.add('dyslexia-font');
+    window.addEventListener('scroll', function() {
+      if (document.body.classList.contains('focus-mode')) {
+        const scrolled = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+      }
+    });
+  </script>
+</body>
+</html>

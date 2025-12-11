@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion 6: Cosinussatsen - Trigonometri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <div class="settings-panel">
+    <button class="settings-btn theme-toggle" onclick="toggleTheme()" title="Byt tema">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+    <button class="settings-btn focus-toggle" onclick="toggleFocus()" title="Enhanced Focus">
+      <span class="icon-focus">🎯</span>
+      <span class="icon-focus-off">✨</span>
+    </button>
+  </div>
+
+  <a href="../index.html" class="back-link">← Tillbaka till översikt</a>
+  
+  <main class="lesson-page">
+    <article class="lesson">
+      <header class="lesson-header">
+        <span class="lesson-badge">Lektion 6</span>
+        <h1 class="lesson-title">Cosinussatsen</h1>
+      </header>
+      
+      <div class="learning-goals">
+        <h3>📚 Lärandemål</h3>
+        <ul>
+          <li>Förstå och tillämpa cosinussatsen</li>
+          <li>Beräkna tredje sidan när två sidor och mellanliggande vinkel är kända</li>
+          <li>Beräkna vinklar när alla tre sidor är kända</li>
+        </ul>
+      </div>
+      
+      <section class="section">
+        <h2 class="section-title">Cosinussatsen</h2>
+        
+        <div class="formula-box">
+          <div class="formula-label">Cosinussatsen - för sidor</div>
+          $$c^2 = a^2 + b^2 - 2ab\cos C$$
+        </div>
+        
+        <div class="formula-box">
+          <div class="formula-label">Cosinussatsen - för vinklar</div>
+          $$\cos C = \frac{a^2 + b^2 - c^2}{2ab}$$
+        </div>
+        
+        <div class="info-box tip">
+          <div class="info-box-title">💡 När används cosinussatsen?</div>
+          <p><strong>Variant 1:</strong> Två sidor och mellanliggande vinkel → tredje sidan<br>
+          <strong>Variant 2:</strong> Alla tre sidor → valfri vinkel</p>
+        </div>
+        
+        <div class="info-box important">
+          <div class="info-box-title">🔗 Koppling till Pythagoras</div>
+          <p>Om $C = 90°$ blir $\cos C = 0$, och cosinussatsen reduceras till $c^2 = a^2 + b^2$ (Pythagoras sats).</p>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Genomgångna Exempel</h2>
+        
+        <div class="example">
+          <div class="example-header">Exempel 1 - Bestäm sida</div>
+          <div class="example-content">
+            <div class="example-problem">I triangel ABC är $a = 7$, $b = 10$ och $C = 60°$. Bestäm $c$.</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$c^2 = a^2 + b^2 - 2ab\cos C$$
+$$c^2 = 7^2 + 10^2 - 2 \cdot 7 \cdot 10 \cdot \cos 60°$$
+$$c^2 = 49 + 100 - 140 \cdot \frac{1}{2} = 149 - 70 = 79$$
+$$c = \sqrt{79} \approx 8{,}9$$
+            </div>
+          </div>
+        </div>
+        
+        <div class="example">
+          <div class="example-header">Exempel 2 - Bestäm vinkel</div>
+          <div class="example-content">
+            <div class="example-problem">I triangel ABC är $a = 5$, $b = 6$, $c = 7$. Bestäm $C$.</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$\cos C = \frac{a^2 + b^2 - c^2}{2ab} = \frac{25 + 36 - 49}{2 \cdot 5 \cdot 6} = \frac{12}{60} = \frac{1}{5}$$
+$$C = \arccos(0{,}2) \approx 78{,}5°$$
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="exercises">
+        <h2 class="exercises-title">📝 Övningar</h2>
+        
+        <div class="exercise-level">
+          <span class="level-badge">Nivå E - Grundläggande</span>
+          <ol class="exercise-list">
+            <li data-num="1">$a = 5$, $b = 8$, $C = 60°$. Bestäm $c$.</li>
+            <li data-num="2">$a = 6$, $b = 6$, $C = 120°$. Bestäm $c$.</li>
+            <li data-num="3">$a = 4$, $b = 5$, $C = 90°$. Bestäm $c$.</li>
+            <li data-num="4">$a = 3$, $b = 4$, $c = 5$. Bestäm $C$.</li>
+            <li data-num="5">$a = 7$, $b = 8$, $c = 9$. Bestäm den största vinkeln.</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge advanced">Nivå C - Tillämpning</span>
+          <ol class="exercise-list">
+            <li data-num="6">Två väggar möts i en hörna med vinkel 110°. En stege 4 m lång står lutad mot ena väggen med foten 1,5 m från hörnet. Hur långt är stegens topp från hörnet?</li>
+            <li data-num="7">$a = 12$, $b = 15$, $C = 50°$. Bestäm triangelns alla vinklar.</li>
+            <li data-num="8">En triangel har sidorna 8, 10 och 14. Beräkna den minsta vinkeln.</li>
+            <li data-num="9">Två skepp lämnar samma hamn. Skepp A seglar 10 km norrut, sedan 8 km i nordostlig riktning (N45°O). Hur långt från hamnen är skepp A?</li>
+            <li data-num="10">$a = 5$, $b = 7$, $c = 10$. Visa att triangeln är trubbvinklig.</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge expert">Nivå A - Avancerat</span>
+          <ol class="exercise-list">
+            <li data-num="11">Visa att $c^2 = a^2 + b^2$ om och endast om $C = 90°$.</li>
+            <li data-num="12">En parallellogram har sidorna 6 cm och 10 cm och diagonalerna 8 cm och 14 cm. Bestäm vinklarna.</li>
+            <li data-num="13">I en triangel är $a = b$ och $\cos C = \frac{7}{18}$. Visa att $c = \frac{2a\sqrt{11}}{6}$.</li>
+            <li data-num="14">Två flygplan startar samtidigt. Plan A flyger N20°O med 500 km/h, plan B flyger S60°O med 600 km/h. Hur långt ifrån varandra är de efter 1{,}5 timmar?</li>
+            <li data-num="15">Bestäm $c$ då $a = 8$, $b = 6$ och $C = 45°$ (exakt svar).</li>
+            <li data-num="16">Härleda cosinussatsen med hjälp av rätvinkliga trianglar och Pythagoras sats.</li>
+            <li data-num="17">En triangel ABC har sidorna $a$, $b$, $c$. Visa att om $a^2 + b^2 > c^2$, så är $C$ spetsig.</li>
+          </ol>
+        </div>
+        
+        <div class="facit">
+          <button class="facit-toggle" onclick="this.nextElementSibling.classList.toggle('visible'); this.textContent = this.nextElementSibling.classList.contains('visible') ? '👁 Dölj facit' : '👁 Visa facit'">👁 Visa facit</button>
+          <div class="facit-content">
+            <div class="facit-item"><strong>1.</strong> $c^2 = 25 + 64 - 40 = 49 \Rightarrow c = 7$</div>
+            <div class="facit-item"><strong>2.</strong> $c^2 = 36 + 36 + 36 = 108 \Rightarrow c = 6\sqrt{3} \approx 10{,}4$</div>
+            <div class="facit-item"><strong>3.</strong> $c = \sqrt{16 + 25} = \sqrt{41} \approx 6{,}4$</div>
+            <div class="facit-item"><strong>4.</strong> $\cos C = \frac{9 + 16 - 25}{24} = 0 \Rightarrow C = 90°$</div>
+            <div class="facit-item"><strong>5.</strong> $\cos C = \frac{49 + 64 - 81}{112} = \frac{32}{112} = \frac{2}{7} \Rightarrow C \approx 73{,}4°$</div>
+            <div class="facit-item"><strong>6.</strong> Använd cosinussatsen: ca 4{,}7 m</div>
+            <div class="facit-item"><strong>7.</strong> $c \approx 11{,}6$, $A \approx 54{,}3°$, $B \approx 75{,}7°$, $C = 50°$</div>
+            <div class="facit-item"><strong>8.</strong> Minsta vinkel mot kortaste sidan (8): $\approx 34{,}0°$</div>
+            <div class="facit-item"><strong>9.</strong> Ca 17{,}1 km</div>
+            <div class="facit-item"><strong>10.</strong> $\cos C = \frac{25 + 49 - 100}{70} = -\frac{26}{70} < 0 \Rightarrow C > 90°$ ✓</div>
+            <div class="facit-item"><strong>11.</strong> $\cos C = 0 \Leftrightarrow C = 90°$ ✓</div>
+            <div class="facit-item"><strong>12.</strong> Ca 60{,}9° och 119{,}1°</div>
+            <div class="facit-item"><strong>13.</strong> $c^2 = 2a^2 - 2a^2 \cdot \frac{7}{18} = a^2 \cdot \frac{22}{18} = \frac{11a^2}{9}$ ✓</div>
+            <div class="facit-item"><strong>14.</strong> Ca 1580 km</div>
+            <div class="facit-item"><strong>15.</strong> $c^2 = 64 + 36 - 48\sqrt{2} = 100 - 48\sqrt{2} \Rightarrow c = \sqrt{100 - 48\sqrt{2}}$</div>
+            <div class="facit-item"><strong>16.</strong> Klassisk härledning via höjd och projektion</div>
+            <div class="facit-item"><strong>17.</strong> $\cos C > 0 \Leftrightarrow a^2 + b^2 > c^2$ ✓</div>
+          </div>
+        </div>
+      </section>
+      
+      <nav class="lesson-nav">
+        <a href="05-sinussatsen.html" class="nav-btn">← Föregående</a>
+        <a href="07-problemlosning.html" class="nav-btn">Nästa →</a>
+      </nav>
+    </article>
+  </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      renderMathInElement(document.body, {
+        delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}],
+        throwOnError: false
+      });
+    });
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    }
+    function toggleFocus() {
+      document.body.classList.toggle('focus-mode');
+      localStorage.setItem('focusMode', document.body.classList.contains('focus-mode') ? 'on' : 'off');
+    }
+    if (localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+    if (localStorage.getItem('focusMode') === 'on') document.body.classList.add('focus-mode');
+    function toggleFont() {
+      document.body.classList.toggle('dyslexia-font');
+      localStorage.setItem('dyslexiaFont', document.body.classList.contains('dyslexia-font') ? 'on' : 'off');
+    }
+    if (localStorage.getItem('dyslexiaFont') === 'on') document.body.classList.add('dyslexia-font');
+    window.addEventListener('scroll', function() {
+      if (document.body.classList.contains('focus-mode')) {
+        const scrolled = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+      }
+    });
+  </script>
+</body>
+</html>

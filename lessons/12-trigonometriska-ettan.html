@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion 12: Trigonometriska Ettan - Trigonometri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <div class="settings-panel">
+    <button class="settings-btn theme-toggle" onclick="toggleTheme()" title="Byt tema">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+    <button class="settings-btn focus-toggle" onclick="toggleFocus()" title="Enhanced Focus">
+      <span class="icon-focus">🎯</span>
+      <span class="icon-focus-off">✨</span>
+    </button>
+    <button class="settings-btn font-toggle" onclick="toggleFont()" title="OpenDyslexic typsnitt">
+      <span class="icon-font">Aa</span>
+      <span class="icon-font-off">Dy</span>
+    </button>
+  </div>
+  <a href="../index.html" class="back-link">← Tillbaka till översikt</a>
+  
+  <main class="lesson-page">
+    <article class="lesson active">
+      <header class="lesson-header">
+        <span class="lesson-badge">Lektion 12</span>
+        <h1 class="lesson-title">Trigonometriska Ettan</h1>
+      </header>
+      
+      <div class="learning-goals">
+        <h3>📚 Lärandemål</h3>
+        <ul>
+          <li>Förstå och bevisa trigonometriska ettan</li>
+          <li>Använda identiteten för förenkling och bevis</li>
+        </ul>
+      </div>
+      
+      <section class="section">
+        <h2 class="section-title">Trigonometriska Ettan</h2>
+        <div class="formula-box">
+          <div class="formula-label">Huvudidentiteten</div>
+          $$\sin^2 v + \cos^2 v = 1$$
+        </div>
+        
+        <div class="info-box tip">
+          <div class="info-box-title">💡 Bevis</div>
+          <p>Från enhetscirkeln: punkt $P = (\cos v, \sin v)$ har avstånd 1 till origo.</p>
+          <p>$(\cos v)^2 + (\sin v)^2 = 1^2 = 1$</p>
+        </div>
+        
+        <h3 class="subsection-title">Omskrivningar</h3>
+        <div class="formula-box">
+          $$\sin^2 v = 1 - \cos^2 v \qquad \cos^2 v = 1 - \sin^2 v$$
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Genomgångna Exempel</h2>
+        
+        <div class="example">
+          <div class="example-header">Exempel 1</div>
+          <div class="example-content">
+            <div class="example-problem">Om $\cos v = \frac{3}{5}$ och $0° < v < 90°$, bestäm $\sin v$.</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$\sin^2 v + \left(\frac{3}{5}\right)^2 = 1$$
+$$\sin^2 v = 1 - \frac{9}{25} = \frac{16}{25}$$
+$$\sin v = \frac{4}{5} \quad \text{(positiv i Q1)}$$
+            </div>
+          </div>
+        </div>
+        
+        <div class="example">
+          <div class="example-header">Exempel 2</div>
+          <div class="example-content">
+            <div class="example-problem">Förenkla $\frac{1 - \sin^2 v}{\cos v}$</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$\frac{1 - \sin^2 v}{\cos v} = \frac{\cos^2 v}{\cos v} = \cos v$$
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="exercises">
+        <h2 class="exercises-title">📝 Övningar</h2>
+        <ol class="exercise-list">
+          <li data-num="1">Om $\sin v = \frac{5}{13}$ och $v$ i Q2, bestäm $\cos v$.</li>
+          <li data-num="2">Förenkla: $\sin^4 v + 2\sin^2 v \cdot \cos^2 v + \cos^4 v$</li>
+          <li data-num="3">Visa att $(\sin v + \cos v)^2 = 1 + 2\sin v \cos v$</li>
+          <li data-num="4">Förenkla: $\frac{(1-\cos v)(1+\cos v)}{\sin^2 v}$</li>
+        </ol>
+        <div class="facit">
+          <button class="facit-toggle" onclick="this.nextElementSibling.classList.toggle('visible'); this.textContent = this.nextElementSibling.classList.contains('visible') ? '👁 Dölj facit' : '👁 Visa facit'">👁 Visa facit</button>
+          <div class="facit-content">
+            <div class="facit-item"><strong>1.</strong> $\cos v = -\frac{12}{13}$</div>
+            <div class="facit-item"><strong>2.</strong> $= (\sin^2 v + \cos^2 v)^2 = 1$</div>
+            <div class="facit-item"><strong>3.</strong> VL $= \sin^2 v + 2\sin v \cos v + \cos^2 v = 1 + 2\sin v \cos v$ = HL</div>
+            <div class="facit-item"><strong>4.</strong> $= \frac{\sin^2 v}{\sin^2 v} = 1$</div>
+          </div>
+        </div>
+      </section>
+      
+      <nav class="lesson-nav">
+        <a href="11-symmetrier.html" class="nav-btn">← Föregående</a>
+        <a href="13-additionsformler.html" class="nav-btn">Nästa →</a>
+      </nav>
+    </article>
+  </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      renderMathInElement(document.body, {
+        delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}],
+        throwOnError: false
+      });
+    });
+  </script>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    }
+    function toggleFocus() {
+      document.body.classList.toggle('focus-mode');
+      localStorage.setItem('focusMode', document.body.classList.contains('focus-mode') ? 'on' : 'off');
+    }
+    if (localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+    if (localStorage.getItem('focusMode') === 'on') document.body.classList.add('focus-mode');
+    window.addEventListener('scroll', function() {
+      if (document.body.classList.contains('focus-mode')) {
+        var s = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100;
+        document.getElementById('progressBar').style.width = s + '%';
+      }
+    });
+  </script>
+</body>
+</html>

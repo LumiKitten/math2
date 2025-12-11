@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion 2: Enhetscirkeln - Trigonometri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <!-- Desmos API -->
+  <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <!-- Progress Bar (Focus Mode) -->
+  <div class="progress-bar" id="progressBar"></div>
+  
+  <!-- Settings Panel -->
+  <div class="settings-panel">
+    <button class="settings-btn theme-toggle" onclick="toggleTheme()" title="Byt tema">
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+    <button class="settings-btn focus-toggle" onclick="toggleFocus()" title="Enhanced Focus">
+      <span class="icon-focus">🎯</span>
+      <span class="icon-focus-off">✨</span>
+    </button>
+  </div>
+
+  <a href="../index.html" class="back-link">← Tillbaka till översikt</a>
+  
+  <main class="lesson-page">
+    <article class="lesson">
+      <header class="lesson-header">
+        <span class="lesson-badge">Lektion 2</span>
+        <h1 class="lesson-title">Enhetscirkeln</h1>
+      </header>
+      
+      <div class="learning-goals">
+        <h3>📚 Lärandemål</h3>
+        <ul>
+          <li>Beskriva enhetscirkeln och dess egenskaper</li>
+          <li>Definiera sinus och cosinus för alla vinklar via enhetscirkeln</li>
+          <li>Avläsa exakta värden från enhetscirkeln</li>
+        </ul>
+      </div>
+      
+      <section class="section">
+        <h2 class="section-title">Definition av Enhetscirkeln</h2>
+        <p>Enhetscirkeln är en cirkel med centrum i origo och radie 1.</p>
+        
+        <div class="formula-box">
+          <div class="formula-label">Enhetscirkelns ekvation</div>
+          $$x^2 + y^2 = 1$$
+        </div>
+        
+        <p>En punkt $P$ på enhetscirkeln som bildar vinkeln $v$ med positiva x-axeln har koordinaterna:</p>
+        
+        <div class="formula-box">
+          <div class="formula-label">Definition av sin och cos</div>
+          $$P = (\cos v, \sin v)$$
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Interaktiv Enhetscirkel</h2>
+        <p>Dra i reglaget för att ändra vinkeln och se hur sinus och cosinus förändras:</p>
+        
+        <div class="graph-container">
+          <div id="unitCircleGraph" class="desmos-graph"></div>
+          <div class="graph-caption">Interaktiv enhetscirkel - dra i vinkeln θ för att utforska</div>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Tecken i Olika Kvadranter</h2>
+        <div class="table-container">
+          <table>
+            <tr><th>Kvadrant</th><th>Vinkelintervall</th><th>$\sin v$</th><th>$\cos v$</th></tr>
+            <tr><td>I</td><td>$0° < v < 90°$</td><td>$+$</td><td>$+$</td></tr>
+            <tr><td>II</td><td>$90° < v < 180°$</td><td>$+$</td><td>$-$</td></tr>
+            <tr><td>III</td><td>$180° < v < 270°$</td><td>$-$</td><td>$-$</td></tr>
+            <tr><td>IV</td><td>$270° < v < 360°$</td><td>$-$</td><td>$+$</td></tr>
+          </table>
+        </div>
+        
+        <div class="info-box tip">
+          <div class="info-box-title">💡 Minnesregel: "All Students Take Calculus"</div>
+          <p><strong>A</strong>ll (I: alla +), <strong>S</strong>tudents (II: sin +), <strong>T</strong>ake (III: tan +), <strong>C</strong>alculus (IV: cos +)</p>
+        </div>
+      </section>
+      
+      <section class="section">
+        <h2 class="section-title">Genomgångna Exempel</h2>
+        
+        <div class="example">
+          <div class="example-header">Exempel 1</div>
+          <div class="example-content">
+            <div class="example-problem">Bestäm koordinaterna för punkten på enhetscirkeln som motsvarar $v = 150°$.</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$150° = 180° - 30° \text{ (referensvinkel } 30°\text{)}$$
+$$\cos 150° = -\cos 30° = -\frac{\sqrt{3}}{2}$$
+$$\sin 150° = \sin 30° = \frac{1}{2}$$
+$$P = \left(-\frac{\sqrt{3}}{2}, \frac{1}{2}\right)$$
+            </div>
+          </div>
+        </div>
+        
+        <div class="example">
+          <div class="example-header">Exempel 2</div>
+          <div class="example-content">
+            <div class="example-problem">I vilken kvadrant ligger vinkeln $v$ om $\sin v > 0$ och $\cos v < 0$?</div>
+            <div class="solution-label">Lösning</div>
+            <div class="solution-steps">
+$$\sin v > 0 \Rightarrow \text{Kvadrant I eller II}$$
+$$\cos v < 0 \Rightarrow \text{Kvadrant II eller III}$$
+$$\text{Svar: Kvadrant II}$$
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="exercises">
+        <h2 class="exercises-title">📝 Övningar</h2>
+        
+        <div class="exercise-level">
+          <span class="level-badge">Nivå E - Grundläggande</span>
+          <ol class="exercise-list">
+            <li data-num="1">Ange koordinaterna för punkten på enhetscirkeln vid $v = 0°$</li>
+            <li data-num="2">Ange koordinaterna för punkten på enhetscirkeln vid $v = 90°$</li>
+            <li data-num="3">I vilken kvadrant är $\sin v > 0$?</li>
+            <li data-num="4">Bestäm $\cos 180°$ och $\sin 180°$</li>
+            <li data-num="5">Ange koordinaterna för punkten vid $v = 270°$</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge advanced">Nivå C - Tillämpning</span>
+          <ol class="exercise-list">
+            <li data-num="6">Bestäm exakt: $\cos 120°$ och $\sin 120°$</li>
+            <li data-num="7">I vilken kvadrant ligger $v$ om $\sin v < 0$ och $\cos v < 0$?</li>
+            <li data-num="8">Bestäm exakt: $\cos 225°$ och $\sin 225°$</li>
+            <li data-num="9">För vilka värden på $v$ i $[0°, 360°]$ gäller $\sin v = 1$?</li>
+            <li data-num="10">Bestäm exakt: $\cos 330°$ och $\sin 330°$</li>
+          </ol>
+        </div>
+        
+        <div class="exercise-level">
+          <span class="level-badge expert">Nivå A - Avancerat</span>
+          <ol class="exercise-list">
+            <li data-num="11">Punkten $P$ ligger på enhetscirkeln med $x$-koordinat $-\frac{3}{5}$ och $y > 0$. Bestäm $\sin v$.</li>
+            <li data-num="12">Om $\cos v = \frac{5}{13}$ och $v$ ligger i kvadrant IV, bestäm $\sin v$.</li>
+            <li data-num="13">Visa att för alla punkter på enhetscirkeln gäller $x^2 + y^2 = 1$ genom att använda definitionen av sin och cos.</li>
+            <li data-num="14">Bestäm alla vinklar $v \in [0°, 360°]$ där $\cos v = \sin v$.</li>
+            <li data-num="15">Om $\tan v = 2$ och $v$ i första kvadranten, bestäm $\sin v$ och $\cos v$ exakt.</li>
+            <li data-num="16">Punkten $(a, b)$ ligger på enhetscirkeln. Visa att $(b, -a)$ också ligger på enhetscirkeln.</li>
+            <li data-num="17">Bestäm alla vinklar $v \in [0°, 360°]$ där $|\sin v| = |\cos v|$.</li>
+          </ol>
+        </div>
+        
+        <div class="facit">
+          <button class="facit-toggle" onclick="this.nextElementSibling.classList.toggle('visible'); this.textContent = this.nextElementSibling.classList.contains('visible') ? '👁 Dölj facit' : '👁 Visa facit'">👁 Visa facit</button>
+          <div class="facit-content">
+            <div class="facit-item"><strong>1.</strong> $(1, 0)$</div>
+            <div class="facit-item"><strong>2.</strong> $(0, 1)$</div>
+            <div class="facit-item"><strong>3.</strong> Kvadrant I och II</div>
+            <div class="facit-item"><strong>4.</strong> $\cos 180° = -1$, $\sin 180° = 0$</div>
+            <div class="facit-item"><strong>5.</strong> $(0, -1)$</div>
+            <div class="facit-item"><strong>6.</strong> $\cos 120° = -\frac{1}{2}$, $\sin 120° = \frac{\sqrt{3}}{2}$</div>
+            <div class="facit-item"><strong>7.</strong> Kvadrant III</div>
+            <div class="facit-item"><strong>8.</strong> $\cos 225° = -\frac{\sqrt{2}}{2}$, $\sin 225° = -\frac{\sqrt{2}}{2}$</div>
+            <div class="facit-item"><strong>9.</strong> $v = 90°$</div>
+            <div class="facit-item"><strong>10.</strong> $\cos 330° = \frac{\sqrt{3}}{2}$, $\sin 330° = -\frac{1}{2}$</div>
+            <div class="facit-item"><strong>11.</strong> $\sin v = \frac{4}{5}$ (från trigonometriska ettan)</div>
+            <div class="facit-item"><strong>12.</strong> $\sin v = -\frac{12}{13}$ (negativ i Q IV)</div>
+            <div class="facit-item"><strong>13.</strong> $\cos^2 v + \sin^2 v = x^2 + y^2 = 1$ ✓</div>
+            <div class="facit-item"><strong>14.</strong> $v = 45°$ eller $v = 225°$</div>
+            <div class="facit-item"><strong>15.</strong> $\sin v = \frac{2}{\sqrt{5}} = \frac{2\sqrt{5}}{5}$, $\cos v = \frac{1}{\sqrt{5}} = \frac{\sqrt{5}}{5}$</div>
+            <div class="facit-item"><strong>16.</strong> $b^2 + (-a)^2 = b^2 + a^2 = a^2 + b^2 = 1$ ✓</div>
+            <div class="facit-item"><strong>17.</strong> $v = 45°, 135°, 225°, 315°$</div>
+          </div>
+        </div>
+      </section>
+      
+      <nav class="lesson-nav">
+        <a href="01-speciella-vinklar.html" class="nav-btn">← Föregående</a>
+        <a href="03-trigonometriska-ekvationer.html" class="nav-btn">Nästa →</a>
+      </nav>
+    </article>
+  </main>
+  
+  <script>
+    // Initialize Desmos Graph
+    document.addEventListener('DOMContentLoaded', function() {
+      // KaTeX rendering
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+        ],
+        throwOnError: false
+      });
+      
+      // Desmos Unit Circle
+      var elt = document.getElementById('unitCircleGraph');
+      if (elt) {
+        var calculator = Desmos.GraphingCalculator(elt, {
+          expressions: true,
+          settingsMenu: false,
+          zoomButtons: true,
+          expressionsCollapsed: true,
+          lockViewport: false,
+          degreeMode: true
+        });
+        
+        // Set square aspect ratio
+        calculator.setMathBounds({left: -1.8, right: 1.8, bottom: -1.8, top: 1.8});
+        
+        // Unit circle
+        calculator.setExpression({id: 'circle', latex: 'x^2+y^2=1', color: '#7B5EBD', lineWidth: 3});
+        
+        // Angle slider (using simple variable 'a')
+        calculator.setExpression({id: 'angle', latex: 'a=60', sliderBounds: {min: 0, max: 360, step: 1}});
+        
+        // Point P on circle - using degrees directly
+        calculator.setExpression({id: 'pointP', latex: '(\\cos(a), \\sin(a))', color: '#FF7B54', pointSize: 15, showLabel: true, label: 'P'});
+        
+        // Horizontal projection line (cos)
+        calculator.setExpression({id: 'cosLine', latex: 'y=0\\left\\{0\\le x\\le\\cos(a)\\right\\}', color: '#00BFA5', lineWidth: 3});
+        calculator.setExpression({id: 'cosLineNeg', latex: 'y=0\\left\\{\\cos(a)\\le x\\le0\\right\\}', color: '#00BFA5', lineWidth: 3});
+        
+        // Vertical projection line (sin)
+        calculator.setExpression({id: 'sinLine', latex: 'x=\\cos(a)\\left\\{0\\le y\\le\\sin(a)\\right\\}', color: '#FFC107', lineWidth: 3});
+        calculator.setExpression({id: 'sinLineNeg', latex: 'x=\\cos(a)\\left\\{\\sin(a)\\le y\\le0\\right\\}', color: '#FFC107', lineWidth: 3});
+        
+        // Radius line from origin to point
+        calculator.setExpression({id: 'radius', latex: 'y=\\tan(a)\\cdot x\\left\\{0\\le x\\le\\cos(a)\\right\\}', color: '#7B5EBD', lineWidth: 2, lineStyle: Desmos.Styles.DASHED});
+        calculator.setExpression({id: 'radiusNeg', latex: 'y=\\tan(a)\\cdot x\\left\\{\\cos(a)\\le x\\le0\\right\\}', color: '#7B5EBD', lineWidth: 2, lineStyle: Desmos.Styles.DASHED});
+        
+        // Cos and Sin labels
+        calculator.setExpression({id: 'cosLabel', latex: '(\\cos(a)/2, -0.15)', showLabel: true, label: 'cos a', color: '#00BFA5', pointSize: 0});
+        calculator.setExpression({id: 'sinLabel', latex: '(\\cos(a)+0.15, \\sin(a)/2)', showLabel: true, label: 'sin a', color: '#FFC107', pointSize: 0});
+        
+        // Origin point
+        calculator.setExpression({id: 'origin', latex: '(0,0)', color: '#888', pointSize: 8});
+      }
+    });
+    
+    // Theme toggle
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    }
+    
+    // Focus mode toggle
+    function toggleFocus() {
+      document.body.classList.toggle('focus-mode');
+      localStorage.setItem('focusMode', document.body.classList.contains('focus-mode') ? 'on' : 'off');
+    }
+    
+    // Apply saved preferences
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+    if (localStorage.getItem('focusMode') === 'on') {
+      document.body.classList.add('focus-mode');
+    }
+    
+    // Progress bar
+    window.addEventListener('scroll', function() {
+      if (document.body.classList.contains('focus-mode')) {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+      }
+    });
+  </script>
+</body>
+</html>
