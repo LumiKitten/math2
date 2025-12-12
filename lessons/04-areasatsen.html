@@ -18,13 +18,17 @@
   
   <!-- Settings Panel -->
   <div class="settings-panel">
-    <button class="settings-btn theme-toggle" onclick="toggleTheme()" title="Byt tema">
+    <button class="settings-btn theme-toggle" onclick="toggleTheme()" title="Byt tema (ljust/mörkt)">
       <span class="icon-sun">☀️</span>
       <span class="icon-moon">🌙</span>
     </button>
-    <button class="settings-btn focus-toggle" onclick="toggleFocus()" title="Enhanced Focus">
+    <button class="settings-btn focus-toggle" onclick="toggleFocus()" title="Enhanced Focus - ökad läsbarhet">
       <span class="icon-focus">🎯</span>
       <span class="icon-focus-off">✨</span>
+    </button>
+    <button class="settings-btn font-toggle" onclick="toggleFont()" title="OpenDyslexic typsnitt">
+      <span class="icon-font">Aa</span>
+      <span class="icon-font-off">Dy</span>
     </button>
   </div>
 
@@ -185,12 +189,21 @@ $$C = 30° \text{ eller } C = 150°$$
       localStorage.setItem('focusMode', document.body.classList.contains('focus-mode') ? 'on' : 'off');
     }
     
+    // Font toggle (OpenDyslexic)
+    function toggleFont() {
+      document.body.classList.toggle('dyslexia-font');
+      localStorage.setItem('dyslexiaFont', document.body.classList.contains('dyslexia-font') ? 'on' : 'off');
+    }
+    
     // Apply saved preferences
     if (localStorage.getItem('theme') === 'light') {
       document.body.classList.add('light-mode');
     }
     if (localStorage.getItem('focusMode') === 'on') {
       document.body.classList.add('focus-mode');
+    }
+    if (localStorage.getItem('dyslexiaFont') === 'on') {
+      document.body.classList.add('dyslexia-font');
     }
     
     // Progress bar

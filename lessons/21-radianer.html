@@ -108,6 +108,11 @@ $$x = \frac{\pi}{6} \text{ eller } x = \frac{5\pi}{6}$$
     }
     if (localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
     if (localStorage.getItem('focusMode') === 'on') document.body.classList.add('focus-mode');
+    function toggleFont() {
+      document.body.classList.toggle('dyslexia-font');
+      localStorage.setItem('dyslexiaFont', document.body.classList.contains('dyslexia-font') ? 'on' : 'off');
+    }
+    if (localStorage.getItem('dyslexiaFont') === 'on') document.body.classList.add('dyslexia-font');
     window.addEventListener('scroll', function() {
       if (document.body.classList.contains('focus-mode')) {
         var s = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100;
